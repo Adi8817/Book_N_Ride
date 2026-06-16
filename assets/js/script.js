@@ -165,34 +165,68 @@
     },
   ];
 
-  var servicesGrid = $("#servicesGrid");
-  if (servicesGrid) {
-    services.forEach(function (s) {
-      var col = el("div", "col-sm-6 col-lg-3");
-      col.innerHTML =
-        '<a href="#lead" class="svc-card">' +
+  console.log("SCRIPT RUNNING");
+
+var servicesGrid = $("#servicesGrid");
+
+if (servicesGrid) {
+  services.forEach(function (s) {
+
+    var col = el("div", "col-sm-6 col-lg-3");
+
+    col.innerHTML =
+      '<div class="svc-card">' +
+
         '<div class="svc-media">' +
-        '<img src="' +
-        img(s.id, 700) +
-        '" alt="' +
-        s.name +
-        '" loading="lazy">' +
-        '<span class="svc-num serif">' +
-        s.num +
-        "</span>" +
-        '<span class="svc-icon">' +
-        s.icon +
-        "</span>" +
-        "</div>" +
-        '<div class="svc-body"><h3>' +
-        s.name +
-        "</h3><p>" +
-        s.desc +
-        "</p></div>" +
-        "</a>";
-      servicesGrid.appendChild(col);
-    });
-  }
+
+          '<img src="' +
+            img(s.id, 700) +
+          '" alt="' +
+            s.name +
+          '" loading="lazy">' +
+
+          '<span class="svc-num serif">' +
+            s.num +
+          '</span>' +
+
+          '<span class="svc-icon">' +
+            s.icon +
+          '</span>' +
+
+        '</div>' +
+
+        '<div class="svc-body">' +
+
+          '<h3>' +
+            s.name +
+          '</h3>' +
+
+          '<p>' +
+            s.desc +
+          '</p>' +
+
+          '<div class="svc-actions">' +
+
+            '<a href="#lead" class="svc-btn primary">' +
+              'Book Now →' +
+            '</a>' +
+
+            '<a href="#fleet" class="svc-btn secondary">' +
+              'View Fleet' +
+            '</a>' +
+
+          '</div>' +
+
+        '</div>' +
+
+      '</div>';
+
+    // append AFTER innerHTML
+    servicesGrid.appendChild(col);
+
+  });
+}
+
 
   /* =======================================================
      3. ROUND-TRIP ROUTES

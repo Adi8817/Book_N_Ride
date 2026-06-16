@@ -16,6 +16,10 @@
 
   <!-- Custom styles -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
 </head>
 <body>
 
@@ -119,7 +123,15 @@
 
         <!-- 3 CTAs moved here from the header -->
         <div class="hero-cta">
-          <a href="https://wa.me/18004759975" class="btn btn-wa"><span style="font-size:16px;">✆</span> WhatsApp</a>
+          <a href="https://wa.me/18004759975"
+   target="_blank"
+   class="btn btn-wa">
+
+  <i class="fa-brands fa-whatsapp wa-icon"></i>
+
+  <span>WhatsApp</span>
+
+</a>
           <a href="#online" class="btn btn-ghost">Book Online</a>
           <a href="#lead" class="btn btn-gold">Get a Free Quote</a>
         </div>
@@ -284,7 +296,8 @@
   <div class="wrap">
     <div class="sec-head-row">
       <div>
-        <div class="eyebrow">Our Premier Fleet</div>
+        <!-- <div class="eyebrow">Our Premier Fleet</div> -->
+        <div class="hero-badge">Our Premier Fleet</div>
         <h2>Choose Your Ride in Style</h2>
       </div>
       <a href="#" class="link-arrow">View Full Fleet →</a>
@@ -382,7 +395,8 @@
 <section class="section" id="services" style="padding-top:20px;">
   <div class="wrap">
     <div class="sec-head-center">
-      <div class="eyebrow">What We Do</div>
+      <!-- <div class="eyebrow">What We Do</div> -->
+       <div class="hero-badge">What We Do</div>
       <h2 class="serif">Transportation Services</h2>
       <p>From the runway to the boardroom to the big night out — one trusted chauffeur partner for every journey.</p>
     </div>
@@ -395,7 +409,7 @@
   <div class="wrap">
     <div class="row g-5 align-items-center">
       <div class="col-lg-5">
-        <div class="eyebrow">Neighborhood Service</div>
+        <div class="hero-badge">Neighborhood Service</div>
         <h2>Limousine Service Where You Live</h2>
         <p>Local chauffeurs who know every back road, school pickup line and station platform. Trusted black-car service tailored to the communities of Westchester and Fairfield County.</p>
         <a href="#lead" class="btn btn-ghost" style="margin-top:26px;border-width:1px;">Reserve in Your Area →</a>
@@ -425,7 +439,7 @@
 <section class="section">
   <div class="wrap">
     <div class="sec-head-center">
-      <div class="eyebrow">There &amp; Back, Seamlessly</div>
+      <div class="hero-badge">There &amp; Back, Seamlessly</div>
       <h2 class="serif">Round-Trip Routes, Booked Once</h2>
       <p>One confirmed chauffeur for the whole journey — no scrambling for a ride home. Popular round-trip routes across the tri-state and New England.</p>
     </div>
@@ -434,9 +448,9 @@
 </section>
 
 <!-- ===================== BOOK CTA ===================== -->
-<section class="cta-band" id="book">
+<!-- <section class="cta-band" id="book">
   <div class="cta-inner">
-    <div class="eyebrow">Ready When You Are</div>
+    <div class="hero-badge">Ready When You Are</div>
     <h2>Book a Limo in Under 60 Seconds</h2>
     <p>Call our 24/7 dispatch or reserve online. Flat rates, no surge pricing, and a confirmation you can count on.</p>
     <div class="cta-actions">
@@ -444,12 +458,89 @@
       <a href="#online" class="btn btn-ghost">Reserve Online →</a>
     </div>
   </div>
+</section> -->
+
+<section class="cta-band" id="book">
+  <div class="cta-inner">
+
+    <div class="hero-badge">
+      Ready When You Are
+    </div>
+
+    <h2>Book a Limo in Under 60 Seconds</h2>
+
+    <p>
+      Call our 24/7 dispatch or reserve online.
+      Flat rates, no surge pricing, and a
+      confirmation you can count on.
+    </p>
+
+    <div class="cta-actions">
+
+      <!-- CALL -->
+      <a href="tel:18004759975"
+         class="btn btn-call">
+
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+          19.79 19.79 0 0 1-8.63-3.07
+          19.5 19.5 0 0 1-6-6
+          19.79 19.79 0 0 1-3.07-8.67
+          A2 2 0 0 1 4.11 2h3
+          a2 2 0 0 1 2 1.72
+          c.12.9.32 1.78.59 2.64
+          a2 2 0 0 1-.45 2.11
+          L8.09 9.91
+          a16 16 0 0 0 6 6
+          l1.44-1.16
+          a2 2 0 0 1 2.11-.45
+          c.86.27 1.74.47 2.64.59
+          A2 2 0 0 1 22 16.92z"/>
+        </svg>
+
+        <span>1 (800) 475–9975</span>
+      </a>
+
+      <!-- WHATSAPP -->
+     <a href="https://wa.me/18004759975"
+   target="_blank"
+   class="btn btn-whatsapp">
+
+  <i class="fa-brands fa-whatsapp wa-fa-icon"></i>
+
+  <span>WhatsApp Us</span>
+
+</a>
+
+      <!-- RESERVE -->
+      <a href="#online"
+         class="btn btn-reserve">
+
+        <span>Reserve Online</span>
+
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2">
+          <path d="M5 12h14"/>
+          <path d="M13 5l7 7-7 7"/>
+        </svg>
+
+      </a>
+
+    </div>
+  </div>
 </section>
 
+
+
 <!-- ===================== BOOK ONLINE (iframe) ===================== -->
-<section class="online" id="online">
+<!-- <section class="online" id="online">
   <div class="online-inner">
-    <div class="eyebrow">Book Online</div>
+    <div class="hero-badge">Book Online</div>
     <h2 class="serif">Real-Time Quotes &amp; Instant Confirmation</h2>
     <p>Use our secure live reservation system to price your trip, choose your vehicle and confirm in real time.</p>
     <div class="steps">
@@ -469,14 +560,100 @@
       <a href="https://book.mylimobiz.com/v4/ctaverylimo" target="_blank" rel="noopener" class="btn btn-ghost">Open Full Booking Portal →</a>
     </div>
   </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+<section class="online" id="online">
+
+  <div class="online-inner">
+
+    <div class="hero-badge">
+      Book Online
+    </div>
+
+    <h2 class="serif">
+      Real-Time Quotes & Instant Confirmation
+    </h2>
+
+    <p>
+      Use our secure live reservation system
+      to price your trip, choose your vehicle
+      and confirm instantly.
+    </p>
+
+    <!-- BOOKING STEPS -->
+    <div class="steps">
+
+      <div class="step">
+        <div class="num serif">1</div>
+        <div class="t">Trip Details</div>
+        <div class="d">
+          Pickup, dropoff & time
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num serif">2</div>
+        <div class="t">Choose Vehicle</div>
+        <div class="d">
+          Sedan to Sprinter
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num serif">3</div>
+        <div class="t">Confirm & Go</div>
+        <div class="d">
+          Instant confirmation
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PREMIUM BOOKING CONTAINER -->
+    <div class="portal luxury-booking">
+
+      <div class="booking-shell">
+
+        <iframe
+          id="bookingFrame"
+          src="https://book.mylimobiz.com/v4/ctaverylimo"
+          title="Online Reservations"
+          loading="lazy">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+
+
+
+
+
+
+
 
 <!-- ===================== WELCOME / ABOUT ===================== -->
 <section class="section" id="about" style="padding-bottom:70px;">
   <div class="wrap">
     <div class="row g-5 align-items-center about-grid">
       <div class="col-lg-6 about-copy">
-        <div class="eyebrow">Welcome to Book N Ride</div>
+        <div class="hero-badge">Welcome to Book N Ride</div>
         <h2>Connecticut Limousine &amp; Car Service — Ride in Style</h2>
         <p>You are welcome to <strong>Book N Ride Executive Car Service</strong> — the standard-setter for limousine service across Connecticut, New York and New Jersey. Since 1997 we've built our reputation one flawless ride at a time, pairing immaculate vehicles with professional chauffeurs who treat punctuality and discretion as non-negotiable.</p>
         <p>Whether it's a dawn airport run, an executive roadshow or a once-in-a-lifetime celebration, we deliver reliable, luxury ground transportation with transparent flat-rate pricing and around-the-clock support.</p>
@@ -528,7 +705,7 @@
     <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=70" alt="Air travel" loading="lazy">
     <div class="airbanner-inner">
       <div>
-        <div class="eyebrow">Executive Transportation</div>
+        <div class="hero-badge">Executive Transportation</div>
         <h2 class="serif">To Every Tri-State Area Airport</h2>
         <p>Flight-tracked pickups, meet-and-greet service and complimentary wait time. We monitor your inbound so your chauffeur is curbside the moment you land — at JFK, LaGuardia, Newark, Westchester, Bradley and beyond.</p>
       </div>
@@ -560,7 +737,7 @@
 <section style="padding:0 5vw 86px;">
   <div class="wrap" style="padding:0;">
     <div class="sec-head-center">
-      <div class="eyebrow">Where We Drive</div>
+      <div class="hero-badge">Where We Drive</div>
       <h2 class="serif">Destinations We Serve</h2>
     </div>
     <div class="directory">
@@ -569,11 +746,189 @@
   </div>
 </section>
 
+
+
+<section class="airport-executive section">
+
+  <div class="wrap">
+
+    <div class="airport-grid">
+
+      <!-- LEFT IMAGE -->
+      <div class="airport-media">
+
+        <img
+          src="./assets/images/airportservices.jpg"
+          alt="Airport Executive Car Service">
+
+        <div class="airport-overlay">
+
+          <div class="hero-badge">
+            Since 1997
+          </div>
+
+          <h3 class="serif">
+            Luxury Airport Executive Service
+          </h3>
+
+          <p>
+            Professional airport transportation
+            across Connecticut, New York
+            & New Jersey.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="airport-card">
+
+        <div class="hero-badge">
+          Airport Executive Car Service
+        </div>
+
+        <h2 class="serif">
+          BOOK N RIDE Airport Executive Car Service
+        </h2>
+
+        <p class="airport-intro">
+          Our limousine service will send you
+          the sort of car you need — whether
+          it’s a van, luxury limousine, executive
+          black car, or larger vehicle for your group.
+          Ask us for recommendations and we’ll help
+          you choose the best option.
+        </p>
+
+        <!-- CONTENT BLOCKS -->
+
+        <div class="airport-block">
+          <h4>Pickup Flexibility</h4>
+
+          <p>
+            Our service will pick you up at home,
+            the office, or even allow stops along
+            the way to the airport. Drivers can pick
+            up several members of your group from
+            different locations while ensuring
+            everyone reaches the airport on time.
+          </p>
+        </div>
+
+        <div class="airport-block">
+          <h4>Luggage Assistance</h4>
+
+          <p>
+            We assist with luggage when entering
+            and exiting the vehicle. Our chauffeurs
+            help ensure a smooth airport arrival,
+            showing you where to check bags
+            or where to go for flight check-in.
+          </p>
+        </div>
+
+        <div class="airport-block">
+          <h4>How Long Does The Drive Take?</h4>
+
+          <p>
+            Travel time depends on your location
+            and airport, but our chauffeurs know
+            the fastest routes and traffic alternatives.
+            Skip the driving stress and let us handle
+            the journey while you relax.
+          </p>
+        </div>
+
+        <div class="airport-block">
+          <h4>No Parking Hassles</h4>
+
+          <p>
+            Avoid expensive airport parking,
+            long walks, and the frustration of
+            finding your car after travel.
+            A private chauffeur means a smooth
+            arrival and departure every time.
+          </p>
+        </div>
+
+        <div class="airport-block">
+          <h4>Book Online & Save $25</h4>
+
+          <p>
+            Reserve online and customize your
+            trip with your preferred vehicle,
+            route and timing. Arrive with enough
+            time for airport security and enjoy
+            a stress-free departure.
+          </p>
+        </div>
+
+        <!-- CTA -->
+
+        <div class="airport-actions">
+
+          <a href="#lead"
+             class="btn btn-gold">
+            Book Ride →
+          </a>
+
+      
+<a href="tel:18004759975"
+   class="btn btn-ghost phone-btn">
+
+  <svg
+    class="phone-icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+    19.79 19.79 0 0 1-8.63-3.07
+    19.5 19.5 0 0 1-6-6
+    19.79 19.79 0 0 1-3.07-8.67
+    A2 2 0 0 1 4.11 2h3
+    a2 2 0 0 1 2 1.72
+    c.12.9.32 1.78.59 2.64
+    a2 2 0 0 1-.45 2.11
+    L8.09 9.91
+    a16 16 0 0 0 6 6
+    l1.44-1.16
+    a2 2 0 0 1 2.11-.45
+    c.86.27 1.74.47 2.64.59
+    A2 2 0 0 1 22 16.92z"/>
+  </svg>
+
+  <span>1 (800) 475-9975</span>
+
+</a>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
 <!-- ===================== TESTIMONIALS ===================== -->
 <section class="testi" id="testimonials">
   <div class="testi-head">
     <div class="sec-head-center">
-      <div class="eyebrow">Five-Star Rides</div>
+      <div class="hero-badge">Five-Star Rides</div>
       <h2 class="serif">What Our Clients Say</h2>
     </div>
   </div>
@@ -611,7 +966,7 @@
 </section> -->
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="site-footer" id="contact">
+<!-- <footer class="site-footer" id="contact">
   <div class="wrap">
     <div class="footer-top">
       <div class="row g-5">
@@ -663,7 +1018,7 @@
   </div>
 
   <!-- NEW: centered legal links band, just above the copyright -->
-  <div class="legal-band">
+  <!-- <div class="legal-band">
     <div class="legal-links">
       <a href="#">Privacy Policy</a>
       <span class="legal-sep"></span>
@@ -676,6 +1031,158 @@
   <div class="footer-bottom">
     <span class="copy">© <span id="year">2026</span> Book N Ride Executive Car Service.</span>
     <span class="credit">Designed &amp; Managed by <a href="#">DUENCY</a></span>
+  </div>
+</footer>  -->
+
+
+
+
+
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+
+    <div class="footer-grid">
+
+      <!-- LEFT BRAND -->
+      <div class="footer-brand">
+        <img src="assets/images/booknride-logo.webp" alt="Book N Ride">
+
+        <p>
+          Premium limousine & executive transportation across
+          Connecticut, New York and New Jersey since 1997.
+          Luxury rides, airport transfers & corporate travel.
+        </p>
+
+        <div class="footer-contact">
+
+          <a href="tel:18004759975" class="contact-item">
+            <span class="contact-icon">
+  <i class="fa-solid fa-phone-volume"></i>
+</span>
+            <span>1 (800) 475-9975</span>
+          </a>
+
+          <a href="mailto:Info@bookaridelimo.com" class="contact-item">
+            <span class="contact-icon">
+  <i class="fa-solid fa-envelope"></i>
+</span>
+            <span>Info@bookaridelimo.com</span>
+          </a>
+
+          <div class="contact-item">
+            <span class="contact-icon">
+  <i class="fa-solid fa-location-dot"></i>
+</span>
+            <span>734 Knapps Street, Fairfield, CT 06824</span>
+          </div>
+
+          <div class="contact-item">
+           <span class="contact-icon">
+  <i class="fa-solid fa-location-dot"></i>
+</span>
+            <span>1215 Oceans Ave, Brooklyn, NY 11230</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="footer-col">
+        <h4>Services</h4>
+
+        <div class="footer-links">
+          <a href="#services">Airport Transportation</a>
+          <a href="#services">Corporate Travel</a>
+          <a href="#services">Casino Transportation</a>
+          <a href="#services">Cruise Transfers</a>
+          <a href="#services">Wedding & Prom</a>
+          <a href="#services">Group Travel</a>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="footer-col">
+        <h4>Company</h4>
+
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#fleet">Fleet</a>
+          <a href="#online">Book Online</a>
+          <a href="#book">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="footer-col stay-touch">
+        <h4>Stay Connected</h4>
+
+        <p>
+          24/7 reservations & dispatch support.
+          Follow us for offers & updates.
+        </p>
+
+        <div class="socials">
+
+  <a href="#" title="Facebook">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <a href="#" title="LinkedIn">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+
+  <a href="#" title="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="#" title="Twitter">
+    <i class="fa-brands fa-x-twitter"></i>
+  </a>
+
+</div>
+
+        <div class="footer-btns">
+          <a href="#lead" class="btn btn-gold">
+            Get Free Quote →
+          </a>
+
+         <a href="https://wa.me/18004759975"
+class="btn-whatsapp">
+
+  <i class="fa-brands fa-whatsapp"></i>
+  WhatsApp Us
+
+</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-legal">
+
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Service Area</a>
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Book N Ride Executive Car Service.
+        </span>
+
+        <span class="footer-credit">
+          Designed by
+          <a href="https://www.duency.com/">DUENCY</a>
+        </span>
+
+      </div>
+    </div>
+
   </div>
 </footer>
 
