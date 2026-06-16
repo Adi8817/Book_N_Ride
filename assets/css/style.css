@@ -370,11 +370,20 @@ select option {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 .header-inner {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  padding: 10px 5vw;
+  padding: 10px 5vw; */
+  max-width: var(--maxw);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+  padding: 10px 10px;
 }
 .brand {
   display: flex;
@@ -386,6 +395,7 @@ select option {
   width: auto;
   filter: drop-shadow(0 0 16px rgba(245, 197, 66, 0.28));
   transition: transform 0.25s ease;
+  margin: left 10px;
 }
 .brand:hover img {
   transform: scale(1.03);
