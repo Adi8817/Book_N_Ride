@@ -18,7 +18,7 @@
   --line: rgba(255, 255, 255, 0.07);
   --line-2: rgba(255, 255, 255, 0.12);
   --gold-line: rgba(245, 197, 66, 0.4);
-  --maxw: 1340px;
+  --maxw: 1280px;
 }
 
 * {
@@ -181,10 +181,19 @@ select option {
   color: var(--gold);
 }
 
+
+
+
+
+
+
+
+
+
 /* =========================================================
    TOP BAR
    ========================================================= */
-.topbar {
+/* .topbar {
   background: var(--bg-3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   font-size: 13px;
@@ -225,7 +234,124 @@ select option {
   width: 1px;
   height: 14px;
   background: var(--line-2);
+} */
+
+
+
+
+.topbar {
+  background:
+    linear-gradient(
+      to right,
+      rgba(245,197,66,0.06),
+      transparent 30%
+    ),
+    #09090c;
+
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 13px;
 }
+
+.topbar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 5vw; */
+  min-height: 48px;
+  padding: 10px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(245,197,66,.08);
+  border: 1px solid rgba(245,197,66,.18);
+  color: #f5c542;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+
+.trust-item {
+  color: #bdbdc7;
+  font-weight: 500;
+}
+
+.trust-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.22);
+}
+
+.top-call {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #f5c542;
+  color: #111 !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .25s ease;
+}
+
+.top-call:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .topbar .wrap {
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .topbar-left {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================================================
    HEADER  (bigger logo + single-line menu)
@@ -275,8 +401,8 @@ select option {
   align-items: center;
   gap: 6px;
   padding: 14px 14px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   color: #d2d0ca;
   letter-spacing: 0.02em;
   border-bottom: 2px solid transparent;
@@ -604,7 +730,7 @@ select option {
 /* =========================================================
    STATS STRIP
    ========================================================= */
-.stats {
+/* .stats {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   background: var(--bg-2);
@@ -626,7 +752,111 @@ select option {
   color: var(--muted);
   letter-spacing: 0.05em;
   margin-top: 2px;
+} */
+
+
+
+
+.stats {
+  position: relative;
+  background:
+    radial-gradient(
+      700px 120px at 50% -20%,
+      rgba(245,197,66,.06),
+      transparent 70%
+    ),
+    #07080d;
+
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  overflow: hidden;
 }
+
+.stats .wrap {
+  padding: 38px 5vw;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.stat {
+  position: relative;
+  text-align: center;
+  padding: 18px 10px;
+  transition: all .35s ease;
+}
+
+/* subtle separators */
+.stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background:
+    linear-gradient(
+      transparent,
+      rgba(255,255,255,.12),
+      transparent
+    );
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  font-size: 14px;
+  color: rgba(245,197,66,.75);
+  margin-bottom: 10px;
+  opacity: .85;
+}
+
+.stat .n {
+  font-family: "Marcellus", serif;
+  font-size: clamp(38px,4vw,56px);
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 24px rgba(245,197,66,.10);
+}
+
+.stat .l {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #9d9da6;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (max-width:768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .stat {
+    padding: 26px 10px;
+  }
+
+  .stat:nth-child(2)::after {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================================================
    SECTION HEADS
