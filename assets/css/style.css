@@ -745,6 +745,31 @@ select option {
   text-align: right;
 }
 
+
+.hero .wrap{
+position:relative;
+z-index:5;
+}
+
+.hero-content{
+max-width:950px;
+margin:0 auto;
+text-align:center;
+}
+
+.hero-lead{
+max-width:720px;
+margin:0 auto 32px;
+}
+
+.hero-cta{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
 /* =========================================================
    STATS STRIP
    ========================================================= */
@@ -1731,7 +1756,7 @@ select option {
 /* heading */
 .online-inner h2 {
   font-family: "Marcellus", serif;
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(42px, 5vw, 46px);
   font-weight: 400;
   line-height: 1.08;
 
@@ -2463,12 +2488,22 @@ select option {
 
 /* BRAND */
 
-.footer-brand img{
+/* .footer-brand img{
   height:78px;
   margin-bottom:22px;
   filter: drop-shadow(
     0 0 18px rgba(245,197,66,.22)
   );
+} */
+ .footer-brand img{
+    height: 135px;
+    width: auto;
+    margin-bottom: 24px;
+
+    filter:
+      drop-shadow(
+        0 0 22px rgba(245,197,66,.25)
+      );
 }
 
 .footer-brand p{
