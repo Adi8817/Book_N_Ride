@@ -1,0 +1,120 @@
+/* =========================================================
+   Book N Ride — base.css
+   CSS custom properties · reset · typography · utilities
+   @keyframes · scrollbar
+   Loaded: Every page — first stylesheet
+   ========================================================= */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg:        #0b0b0d;
+  --bg-2:      #0d0d10;
+  --bg-3:      #08080a;
+  --panel:     #121216;
+  --panel-2:   #15151a;
+  --gold:      #f5c542;
+  --gold-d:    #d39f2c;
+  --ink:       #0b0b0d;
+  --text:      #f3f1ec;
+  --muted:     #9a9aa2;
+  --muted-2:   #b6b4ad;
+  --line:      rgba(255,255,255,0.07);
+  --line-2:    rgba(255,255,255,0.12);
+  --gold-line: rgba(245,197,66,0.4);
+  --maxw:      1280px;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+::placeholder {
+  color: #73737b;
+}
+
+select option {
+  background: #16161a;
+  color: var(--text);
+}
+
+/* ---------- Utility classes ---------- */
+.serif {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar       { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #2a2a30; border-radius: 8px; }
+
+/* ---------- @keyframes ---------- */
+@keyframes glowP {
+  0%, 100% { opacity: 0.45; }
+  50%       { opacity: 0.85; }
+}
+
+@keyframes marqueeX {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes chatPop {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0   rgba(245,197,66,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(245,197,66,0);   }
+  100% { box-shadow: 0 0 0 0   rgba(245,197,66,0);   }
+}

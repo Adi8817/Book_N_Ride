@@ -1,0 +1,1169 @@
+/* =========================================================
+   Book N Ride — components.css
+   All reusable atomic UI pieces. Nothing here is tied to
+   a specific page or section layout.
+   Loaded: Every page
+   ========================================================= */
+
+/* =========================================================
+   BUTTONS — canonical definitions (duplicates removed)
+   ========================================================= */
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease,
+    border-color 0.28s ease,
+    color 0.28s ease;
+}
+
+/* Shine sweep on hover */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+  transition: left 0.65s ease;
+}
+.btn:hover::before {
+  left: 130%;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #f0c33c, #dca81a);
+  color: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 28px rgba(240,195,60,0.18);
+}
+.btn-gold:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #f7ce4d, #eab425);
+  box-shadow: 0 16px 36px rgba(240,195,60,0.28);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(245,197,66,0.28);
+  color: var(--gold);
+}
+.btn-ghost:hover {
+  transform: translateY(-4px);
+  background: rgba(245,197,66,0.08);
+  border-color: rgba(245,197,66,0.5);
+  box-shadow: 0 12px 28px rgba(245,197,66,0.12);
+}
+
+.btn-wa {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #25D366, #1ebe57);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 28px rgba(37,211,102,0.18);
+  gap: 10px;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+}
+.btn-wa:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #2ee66f, #25D366);
+  box-shadow: 0 16px 34px rgba(37,211,102,0.28);
+}
+.btn-wa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+  transition: left 0.65s ease;
+}
+.btn-wa:hover::before {
+  left: 130%;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--line-2);
+  color: #e9e7e1;
+  font-weight: 600;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* CTA band — call button */
+.btn-call {
+  background: linear-gradient(180deg, #f5cf54, #d9aa1d);
+  color: #141414;
+  box-shadow: 0 12px 34px rgba(245,197,66,0.24);
+}
+.btn-call:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(245,197,66,0.32);
+}
+.btn-call svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* WhatsApp button — consolidated (used in CTA band + footer) */
+.btn-whatsapp {
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #0d3b28, #08261a);
+  border: 1px solid rgba(37,211,102,0.28);
+  color: #8dffb6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 10px 24px rgba(37,211,102,0.08);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, #114d34, #0a2f21);
+  border-color: rgba(37,211,102,0.42);
+  box-shadow: 0 14px 30px rgba(37,211,102,0.14);
+}
+.btn-whatsapp i {
+  font-size: 22px;
+  color: #25D366;
+}
+
+/* Reserve / arrow button */
+.btn-reserve {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(245,197,66,0.28);
+  color: var(--gold);
+}
+.btn-reserve:hover {
+  transform: translateY(-3px);
+  background: rgba(245,197,66,0.06);
+}
+.btn-reserve svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* WhatsApp icon */
+.wa-icon {
+  font-size: 22px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   HERO BADGE  (reused across all section eyebrows)
+   ========================================================= */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  border: 1px solid rgba(245,197,66,0.34);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 26px;
+}
+
+/* =========================================================
+   SECTION HEADING PATTERNS
+   ========================================================= */
+.section {
+  padding: 88px 5vw;
+}
+
+.sec-head-center {
+  text-align: center;
+  margin-bottom: 46px;
+}
+.sec-head-center h2 {
+  font-family: "Marcellus", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.06;
+}
+.sec-head-center p {
+  font-size: 16px;
+  color: #a8a69f;
+  max-width: 620px;
+  margin: 14px auto 0;
+}
+
+.sec-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 42px;
+  flex-wrap: wrap;
+}
+.sec-head-row h2 {
+  font-family: "Marcellus", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.link-arrow {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold-line);
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+.link-arrow:hover {
+  color: #fff;
+}
+
+/* =========================================================
+   FLEET CARDS
+   ========================================================= */
+.fleet-card {
+  position: relative;
+  background: linear-gradient(180deg, #151519, #101013);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+.fleet-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(245,197,66,0.45);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.5);
+}
+
+.fleet-media {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: #0e0e11;
+}
+.fleet-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.fleet-card:hover .fleet-media img {
+  transform: scale(1.06);
+}
+.fleet-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(13,13,16,0.85));
+}
+
+.fleet-pax {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  background: rgba(11,11,13,0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(245,197,66,0.5);
+  color: var(--gold);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.fleet-body {
+  padding: 18px 22px 22px;
+}
+.fleet-cls {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #86868e;
+  margin-bottom: 7px;
+}
+.fleet-body h3 {
+  font-family: "Marcellus", serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.fleet-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fleet-foot .note {
+  font-size: 13px;
+  color: var(--muted);
+}
+.reserve {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  transition: color 0.2s;
+}
+.fleet-card:hover .reserve {
+  color: #fff;
+}
+
+/* =========================================================
+   SERVICE CARDS
+   ========================================================= */
+.svc-card {
+  position: relative;
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.28s ease;
+  height: 100%;
+}
+.svc-card:hover {
+  border-color: rgba(245,197,66,0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.svc-media {
+  position: relative;
+  height: 168px;
+  overflow: hidden;
+  background: #0e0e11;
+}
+.svc-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.svc-card:hover .svc-media img {
+  transform: scale(1.07);
+}
+.svc-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,11,13,0.05), rgba(13,13,16,0.88));
+}
+
+.svc-icon {
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  background: var(--panel-2);
+  border: 1px solid var(--gold-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.svc-num {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  font-family: "Marcellus", serif;
+  font-size: 14px;
+  color: rgba(245,197,66,0.9);
+  background: rgba(11,11,13,0.55);
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.svc-body {
+  padding: 32px 20px 22px;
+}
+.svc-body h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.svc-body p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.svc-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.svc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.svc-btn.primary {
+  background: var(--gold);
+  color: #111;
+  box-shadow: 0 10px 26px rgba(245,197,66,0.18);
+}
+.svc-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(245,197,66,0.28);
+}
+.svc-btn.secondary {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #d7d5ce;
+}
+.svc-btn.secondary:hover {
+  color: var(--gold);
+  border-color: rgba(245,197,66,0.35);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .svc-actions { flex-direction: column; }
+  .svc-btn     { width: 100%; }
+}
+
+/* =========================================================
+   ROUTE CARDS
+   ========================================================= */
+.route-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 22px;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.route-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: linear-gradient(180deg, var(--gold), var(--gold-d));
+  transition: width 0.25s ease;
+}
+.route-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245,197,66,0.55);
+  background: #17171c;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.5);
+}
+.route-card:hover::before {
+  width: 4px;
+}
+
+.route-ico {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(245,197,66,0.34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 15px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.route-card:hover .route-ico {
+  background: var(--gold);
+  color: var(--ink);
+  transform: rotate(180deg);
+}
+
+.route-text {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #dcdad3;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+.route-card:hover .route-text {
+  color: #fff;
+}
+
+/* =========================================================
+   LOCATION CARDS
+   ========================================================= */
+.loc-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: rgba(20,20,24,0.7);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 13px;
+  padding: 22px 26px;
+  margin-bottom: 16px;
+  transition: all 0.28s ease;
+}
+.loc-card:hover {
+  background: rgba(245,197,66,0.07);
+  transform: translateX(6px);
+}
+.loc-code {
+  font-family: "Marcellus", serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 54px;
+}
+.loc-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.loc-card .desc {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.loc-arrow {
+  color: var(--gold);
+  font-size: 20px;
+}
+
+/* =========================================================
+   PILLAR TILES
+   ========================================================= */
+.pillar {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.28s ease;
+  height: 100%;
+}
+.pillar:hover {
+  border-color: var(--gold-line);
+  transform: translateY(-4px);
+}
+.pillar .ic {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: rgba(245,197,66,0.1);
+  border: 1px solid rgba(245,197,66,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.pillar h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.pillar p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+.stats {
+  position: relative;
+  background:
+    radial-gradient(700px 120px at 50% -20%, rgba(245,197,66,0.06), transparent 70%),
+    #07080d;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.stats .wrap {
+  padding: 38px 5vw;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  position: relative;
+  text-align: center;
+  padding: 18px 10px;
+  transition: all 0.35s ease;
+}
+.stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(255,255,255,0.12), transparent);
+}
+.stat:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  font-size: 14px;
+  color: rgba(245,197,66,0.75);
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+.stat .n {
+  font-family: "Marcellus", serif;
+  font-size: clamp(38px, 4vw, 56px);
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 24px rgba(245,197,66,0.1);
+}
+.stat .l {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #9d9da6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat       { padding: 26px 10px; }
+  .stat:nth-child(2)::after { display: none; }
+}
+
+/* =========================================================
+   TESTIMONIAL CARDS
+   ========================================================= */
+.tcard {
+  width: 380px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #151519, #101013);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 26px;
+}
+
+.tstars {
+  color: var(--gold);
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.tquote {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #cfcdc6;
+  margin-bottom: 20px;
+  min-height: 88px;
+}
+
+.tfoot {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.tavatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #c99a3a);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 17px;
+  font-family: "Marcellus", serif;
+}
+
+.tname {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tloc {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* =========================================================
+   DIRECTORY COLUMNS
+   ========================================================= */
+.dir-col {
+  padding: 30px 26px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s ease;
+  height: 100%;
+}
+.dir-col:hover {
+  background: rgba(245,197,66,0.07);
+}
+.dir-col:last-child {
+  border-right: none;
+}
+
+.dir-col .head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 18px;
+}
+.dir-col .head .ic {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(245,197,66,0.12);
+  border: 1px solid rgba(245,197,66,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+.dir-col .head h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.dir-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dir-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #a8a69f;
+  padding: 8px 9px;
+  border-radius: 7px;
+  transition: all 0.2s ease;
+}
+.dir-links a .bullet {
+  font-size: 10px;
+  opacity: 0.7;
+}
+.dir-links a:hover {
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+  padding-left: 14px;
+}
+.dir-links a:hover .bullet {
+  color: var(--ink);
+  opacity: 1;
+}
+
+/* =========================================================
+   FORM FIELDS  (reusable across all future form pages)
+   ========================================================= */
+.field {
+  display: block;
+  margin-bottom: 13px;
+}
+.field.full {
+  grid-column: 1 / -1;
+}
+.field > span {
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: #a7a59e;
+  display: block;
+  margin-bottom: 6px;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: #1b1b20;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 9px;
+  padding: 11px 12px;
+  font-size: 14px;
+  transition: border-color 0.18s, background 0.18s;
+}
+.field input[type="date"],
+.field input[type="time"] {
+  color-scheme: dark;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+  background: #1f1f25;
+}
+.field textarea {
+  resize: vertical;
+}
+.err {
+  color: #ff7a7a;
+  font-size: 11.5px;
+  margin-top: 4px;
+  display: none;
+}
+.field.is-invalid .err {
+  display: block;
+}
+.field.is-invalid input,
+.field.is-invalid select {
+  border-color: rgba(255,122,122,0.6);
+}
+
+/* =========================================================
+   CHIPS — airport + safety notice
+   ========================================================= */
+.air-chip {
+  background: rgba(245,197,66,0.14);
+  border: 1px solid var(--gold-line);
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+.covid-chip {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #cfcdc6;
+  font-size: 12.5px;
+  padding: 7px 13px;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   FAQ CATEGORY HEADING  (used on full FAQ page)
+   Groups accordion sections under named categories.
+   ========================================================= */
+.faq-category-head {
+  margin-top: 60px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+.faq-category-head:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.faq-category-head h3 {
+  font-family: "Marcellus", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   POLICY / DOCUMENT CONTENT  (Delays, Privacy, Terms, etc.)
+   Used when a page is primarily long-form prose.
+   ACF block: acf/policy-content
+   ========================================================= */
+.policy-content h3 {
+  font-family: "Marcellus", serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text);
+  margin-top: 44px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.policy-content h3:first-child {
+  margin-top: 0;
+}
+.policy-content p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--muted-2);
+  margin-bottom: 18px;
+}
+.policy-content strong {
+  color: #f0eee8;
+  font-weight: 700;
+}
+.policy-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.policy-content ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--muted-2);
+}
+.policy-content ul li::before {
+  content: "▸";
+  color: var(--gold);
+  font-size: 11px;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CONTACT FORM SUCCESS STATE
+   JS (forms.js) adds .is-visible to show after valid submit.
+   ========================================================= */
+.form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 32px;
+  gap: 16px;
+}
+.form-success.is-visible {
+  display: flex;
+}
+.form-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(245,197,66,0.12);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.form-success h3 {
+  font-family: "Marcellus", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+.form-success p {
+  font-size: 16px;
+  color: var(--muted-2);
+  max-width: 380px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   MAP PLACEHOLDER  (swap for real embed in WordPress)
+   ACF field: acf/map-embed
+   ========================================================= */
+.map-placeholder {
+  width: 100%;
+  height: 440px;
+  background:
+    radial-gradient(600px 200px at 50% 110%, rgba(245,197,66,0.05), transparent 70%),
+    linear-gradient(135deg, #0f0f12, #0a0a0d);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.map-placeholder-icon {
+  font-size: 44px;
+  line-height: 1;
+}
+.map-placeholder h4 {
+  font-family: "Marcellus", serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+}
+.map-placeholder p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 320px;
+  line-height: 1.6;
+}
+.map-placeholder .map-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .map-placeholder { height: 320px; }
+}
+
+/* =========================================================
+   BREADCRUMB  (hero breadcrumb navigation)
+   ========================================================= */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+.breadcrumb-nav a {
+  color: rgba(255,255,255,0.48);
+  transition: color 0.2s;
+}
+.breadcrumb-nav a:hover {
+  color: var(--gold);
+}
+.breadcrumb-sep {
+  color: rgba(255,255,255,0.22);
+  font-size: 10px;
+}
+.breadcrumb-current {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* =========================================================
+   TCARD — grid context override
+   The marquee uses width:380px (fixed). In a Bootstrap
+   grid the card must fill its column instead.
+   Wrap grid rows with .tcard-row to activate this override.
+   ========================================================= */
+.tcard-row .tcard {
+  width: 100%;
+}
+
+/* =========================================================
+   ACCORDION  (driven by accordion.js)
+   Usage: wrap items in [data-accordion], each item has
+   .accordion-trigger (button) + .accordion-panel (div).
+   JS manages aria-expanded and display toggling.
+   ========================================================= */
+.accordion-item {
+  border-bottom: 1px solid var(--line);
+}
+.accordion-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 22px 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+.accordion-trigger:hover {
+  color: var(--gold);
+}
+.accordion-trigger[aria-expanded="true"] {
+  color: var(--gold);
+}
+
+.accordion-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(245,197,66,0.08);
+  border: 1px solid rgba(245,197,66,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+  background: rgba(245,197,66,0.16);
+}
+
+.accordion-panel {
+  padding-bottom: 22px;
+  padding-right: 46px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--muted-2);
+}
+
+/* =========================================================
+   RESPONSIVE — Components
+   ========================================================= */
+@media (max-width: 992px) {
+  .sec-head-center h2,
+  .sec-head-row h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 5vw; }
+  .accordion-trigger  { font-size: 15px; padding: 18px 4px; }
+  .accordion-panel    { padding-right: 16px; }
+}

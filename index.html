@@ -6,7 +6,7 @@
   <title>Book N Ride — Executive Car &amp; Limousine Service | CT · NY · NJ</title>
   <meta name="description" content="Connecticut's premier limousine &amp; executive car service since 1997. Flat-rate luxury ground transportation for airports, corporate travel and special occasions across CT, NY &amp; NJ.">
 
-  <!-- Bootstrap 5.3 — Grid system only -->
+  <!-- Bootstrap 5.3 — Grid only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
 
   <!-- Fonts -->
@@ -14,166 +14,150 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Custom styles -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Styles — 6-file architecture (Phase 2) -->
+  <link href="assets/css/base.css" rel="stylesheet">
+  <link href="assets/css/navigation.css" rel="stylesheet">
+  <link href="assets/css/components.css" rel="stylesheet">
+  <link href="assets/css/sections.css" rel="stylesheet">
+  <link href="assets/css/chat.css" rel="stylesheet">
+  <link href="assets/css/footer.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- ===================== TOP BAR ===================== -->
-<!-- <div class="topbar">
-  <div class="wrap">
-    <div class="topbar-left"><span class="gold">★</span><span>Serving Connecticut · New York · New Jersey since 1997</span></div>
-    <div class="topbar-right">
-      <a href="mailto:Info@bookaridelimo.com">Info@bookaridelimo.com</a>
-      <span class="topbar-sep"></span>
-      <a href="tel:18004759975" class="phone">1 (800) 475-9975</a>
-    </div>
-  </div>
-</div> -->
-
-
-
 <div class="topbar">
   <div class="wrap">
 
     <div class="topbar-left">
-      <span class="pill">
-        Serving CT · NY · NJ Since 1997
-      </span>
-
-      <span class="trust-item">
-        24/7 Reservations
-      </span>
-
-      <span class="trust-dot"></span>
-
-      <span class="trust-item">
-        Licensed & Insured
-      </span>
+      <span class="pill">Serving CT · NY · NJ Since 1997</span>
+      <span class="trust-item">24/7 Reservations</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span class="trust-item">Licensed &amp; Insured</span>
     </div>
 
     <div class="topbar-right">
-      <a href="tel:18004759975" class="top-call">
-        Call Now: 1 (800) 475-9975
-      </a>
+      <a href="tel:18004759975" class="top-call">Call Now: 1 (800) 475-9975</a>
     </div>
 
   </div>
 </div>
 
 
-
-
-<!-- ===================== HEADER (bigger logo, single-line menu) ===================== -->
+<!-- ===================== HEADER ===================== -->
 <header class="site-header" id="home">
   <div class="header-inner">
-    <a href="#home" class="brand"><img src="assets/images/logo.png" alt="Book N Ride Executive Car Service"></a>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <a href="#home" class="brand" aria-label="Book N Ride — Return to top">
+      <img src="assets/images/logo.png" alt="Book N Ride Executive Car Service" width="168" height="84">
+    </a>
 
-    <nav class="main-nav" id="mainNav">
-      <div class="nav-item"><a class="nav-link" href="#home">Home</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+      <span aria-hidden="true">☰</span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+
       <div class="nav-item">
-        <a class="nav-link" href="#about">About <span class="caret">▾</span></a>
-        <div class="dropdown">
-          <a href="#about">About Us</a>
-          <a href="#">Careers</a>
-          <a href="#">Customer Service</a>
-          <a href="#">Delays &amp; Cancellations</a>
-          <a href="#">FAQ</a>
-          <a href="#testimonials">Testimonials</a>
+        <a class="nav-link" href="#home">Home</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="#about" aria-haspopup="true">About <span class="caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown" role="menu">
+          <a href="#about" role="menuitem">About Us</a>
+          <a href="#" role="menuitem">Careers</a>
+          <a href="#" role="menuitem">Customer Service</a>
+          <a href="#" role="menuitem">Delays &amp; Cancellations</a>
+          <a href="#" role="menuitem">FAQ</a>
+          <a href="#testimonials" role="menuitem">Testimonials</a>
         </div>
       </div>
+
       <div class="nav-item">
-        <a class="nav-link" href="#services">Services <span class="caret">▾</span></a>
-        <div class="dropdown">
-          <a href="#services">Airport Transportation</a>
-          <a href="#services">Casino Transportation</a>
-          <a href="#services">Corporate Transportation</a>
-          <a href="#services">Medical Transportation</a>
-          <a href="#services">Prom &amp; Wedding</a>
-          <a href="#services">Group &amp; Hotel Transfers</a>
+        <a class="nav-link" href="#services" aria-haspopup="true">Services <span class="caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown" role="menu">
+          <a href="#services" role="menuitem">Airport Transportation</a>
+          <a href="#services" role="menuitem">Casino Transportation</a>
+          <a href="#services" role="menuitem">Corporate Transportation</a>
+          <a href="#services" role="menuitem">Medical Transportation</a>
+          <a href="#services" role="menuitem">Prom &amp; Wedding</a>
+          <a href="#services" role="menuitem">Group &amp; Hotel Transfers</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="#fleet">Fleet</a></div>
-      <div class="nav-item"><a class="nav-link" href="#book">Fare</a></div>
-      <div class="nav-item"><a class="nav-link" href="#">Blog</a></div>
-      <div class="nav-item"><a class="nav-link" href="#">Track Flights</a></div>
-      <div class="nav-item"><a class="nav-link" href="#contact">Contact</a></div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="#fleet">Fleet</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="#book">Fare</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="#">Track Flights</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
     </nav>
   </div>
 </header>
 
-<!-- ===================== HERO + LEAD FORM ===================== -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-veil"></div>
-  <div class="hero-orb"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" data-screen-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
 
   <div class="wrap">
+    <div class="hero-content">
 
+      <div class="hero-badge">Chauffeured Luxury · Est. 1997</div>
 
-<div class="hero-content">
+      <h1>Arrive in <em>Effortless</em> Luxury, Every Mile</h1>
 
-  <div class="hero-badge">
-    Chauffeured Luxury · Est. 1997
-  </div>
+      <p class="hero-lead">
+        Connecticut's premier limousine &amp; executive car service.
+        Spotless vehicles, professional chauffeurs and flat-rate
+        pricing across CT, NY &amp; NJ — for airports, corporate travel
+        and every special occasion.
+      </p>
 
-  <h1>
-    Arrive in <em>Effortless</em> Luxury,
-    Every Mile
-  </h1>
+      <div class="hero-cta">
 
-  <p class="hero-lead">
-    Connecticut's premier limousine & executive car service.
-    Spotless vehicles, professional chauffeurs and flat-rate
-    pricing across CT, NY & NJ — for airports, corporate travel
-    and every special occasion.
-  </p>
+        <a href="https://wa.me/18004759975" target="_blank" rel="noopener noreferrer" class="btn btn-wa" aria-label="Contact us on WhatsApp">
+          <i class="fa-brands fa-whatsapp wa-icon" aria-hidden="true"></i>
+          <span>WhatsApp</span>
+        </a>
 
-  <div class="hero-cta">
+        <a href="#online" class="btn btn-ghost">Book Online</a>
 
-    <a href="https://wa.me/18004759975"
-       target="_blank"
-       class="btn btn-wa">
+        <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
 
-      <i class="fa-brands fa-whatsapp wa-icon"></i>
-      <span>WhatsApp</span>
+      </div>
 
-    </a>
-
-    <a href="#online" class="btn btn-ghost">
-      Book Online
-    </a>
-
-    <a href="#contact" class="btn btn-gold">
-      Get a Free Quote
-    </a>
-
-  </div>
-
-</div>
-
-
+    </div>
   </div>
 </section>
 
 
-<section class="online" id="online">
-
+<!-- ===================== ONLINE BOOKING ===================== -->
+<section class="online" id="online" data-screen-label="Online Booking">
   <div class="online-inner">
 
-    <div class="hero-badge">
-      Book Online
-    </div>
+    <div class="hero-badge">Book Online</div>
 
-    <h2 class="serif">
-      Real-Time Quotes & Instant Confirmation
-    </h2>
+    <h2 class="serif">Real-Time Quotes &amp; Instant Confirmation</h2>
 
     <p>
       Use our secure live reservation system
@@ -182,92 +166,69 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </p>
 
     <!-- BOOKING STEPS -->
-    <div class="steps">
+    <div class="steps" aria-label="Booking steps">
 
       <div class="step">
-        <div class="num serif">1</div>
+        <div class="num serif" aria-hidden="true">1</div>
         <div class="t">Trip Details</div>
-        <div class="d">
-          Pickup, dropoff & time
-        </div>
+        <div class="d">Pickup, dropoff &amp; time</div>
       </div>
 
       <div class="step">
-        <div class="num serif">2</div>
+        <div class="num serif" aria-hidden="true">2</div>
         <div class="t">Choose Vehicle</div>
-        <div class="d">
-          Sedan to Sprinter
-        </div>
+        <div class="d">Sedan to Sprinter</div>
       </div>
 
       <div class="step">
-        <div class="num serif">3</div>
-        <div class="t">Confirm & Go</div>
-        <div class="d">
-          Instant confirmation
-        </div>
+        <div class="num serif" aria-hidden="true">3</div>
+        <div class="t">Confirm &amp; Go</div>
+        <div class="d">Instant confirmation</div>
       </div>
 
     </div>
 
-    <!-- PREMIUM BOOKING CONTAINER -->
+    <!-- BOOKING PORTAL -->
     <div class="portal luxury-booking">
-
       <div class="booking-shell">
-
         <iframe
           id="bookingFrame"
           src="https://book.mylimobiz.com/v4/ctaverylimo"
-          title="Online Reservations"
+          title="Online Reservations — Book N Ride"
           loading="lazy">
         </iframe>
-
       </div>
-
     </div>
 
   </div>
-
 </section>
 
 
 <!-- ===================== STATS STRIP ===================== -->
-<!-- <div class="stats">
-  <div class="wrap">
-    <div class="row g-4">
-      <div class="col-6 col-md-3"><div class="stat"><div class="n">27+</div><div class="l">Years of Service</div></div></div>
-      <div class="col-6 col-md-3"><div class="stat"><div class="n">50k+</div><div class="l">Rides Completed</div></div></div>
-      <div class="col-6 col-md-3"><div class="stat"><div class="n">4.9★</div><div class="l">Average Rating</div></div></div>
-      <div class="col-6 col-md-3"><div class="stat"><div class="n">24/7</div><div class="l">Live Dispatch</div></div></div>
-    </div>
-  </div>
-</div> -->
-
-
-<div class="stats">
+<div class="stats" data-screen-label="Stats">
   <div class="wrap">
     <div class="stats-grid">
 
       <div class="stat">
-        <div class="stat-icon">✦</div>
+        <div class="stat-icon" aria-hidden="true">✦</div>
         <div class="n">27+</div>
         <div class="l">Years of Service</div>
       </div>
 
       <div class="stat">
-        <div class="stat-icon">⟡</div>
+        <div class="stat-icon" aria-hidden="true">⟡</div>
         <div class="n">50k+</div>
         <div class="l">Rides Completed</div>
       </div>
 
       <div class="stat">
-        <div class="stat-icon">★</div>
+        <div class="stat-icon" aria-hidden="true">★</div>
         <div class="n">4.9</div>
         <div class="l">Average Rating</div>
       </div>
 
       <div class="stat">
-        <div class="stat-icon">◉</div>
+        <div class="stat-icon" aria-hidden="true">◉</div>
         <div class="n">24/7</div>
         <div class="l">Live Dispatch</div>
       </div>
@@ -277,183 +238,541 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </div>
 
 
-
-
-<!-- ===================== FLEET (black-car images) ===================== -->
-<section class="section" id="fleet">
+<!-- ===================== FLEET ===================== -->
+<section class="section" id="fleet" data-screen-label="Fleet">
   <div class="wrap">
+
     <div class="sec-head-row">
       <div>
-        <!-- <div class="eyebrow">Our Premier Fleet</div> -->
         <div class="hero-badge">Our Premier Fleet</div>
         <h2>Choose Your Ride in Style</h2>
       </div>
       <a href="#" class="link-arrow">View Full Fleet →</a>
     </div>
+
     <div class="row g-4">
-      <!-- 1 -->
+
+      <!-- Mercedes Sprinter 8 Pax -->
       <div class="col-md-6 col-lg-4">
-        <div class="fleet-card">
+        <article class="fleet-card">
           <div class="fleet-media">
-            <img src="assets/images/mercedes-sprinter-8-pax.webp" alt="Black Mercedes-Benz executive sedan" loading="lazy">
+            <img src="assets/images/mercedes-sprinter-8-pax.webp" alt="Mercedes Sprinter Executive Van — 8 Passengers" loading="lazy">
             <span class="fleet-pax">8 Passengers</span>
           </div>
           <div class="fleet-body">
             <div class="fleet-cls">Executive Van</div>
             <h3 class="serif">Mercedes Sprinter 8 Passengers</h3>
-            <div class="fleet-foot"><span class="note">First-class comfort</span><a href="#lead" class="reserve">Reserve →</a></div>
+            <div class="fleet-foot">
+              <span class="note">First-class comfort</span>
+              <a href="#online" class="reserve">Reserve →</a>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-      <!-- 2 — GMC / SUV model type -->
+
+      <!-- Mercedes Sprinter 10 Pax -->
       <div class="col-md-6 col-lg-4">
-        <div class="fleet-card">
+        <article class="fleet-card">
           <div class="fleet-media">
-            <img src="assets/images/mercedes-sprinter-10-pax.webp" alt="Black GMC / Cadillac Escalade luxury SUV" loading="lazy">
+            <img src="assets/images/mercedes-sprinter-10-pax.webp" alt="Mercedes Sprinter Executive Van — 10 Passengers" loading="lazy">
             <span class="fleet-pax">10 Passengers</span>
           </div>
           <div class="fleet-body">
             <div class="fleet-cls">Executive Van</div>
             <h3 class="serif">Mercedes Sprinter 10 Passengers</h3>
-            <div class="fleet-foot"><span class="note">Group &amp; airport runs</span><a href="#lead" class="reserve">Reserve →</a></div>
+            <div class="fleet-foot">
+              <span class="note">Group &amp; airport runs</span>
+              <a href="#online" class="reserve">Reserve →</a>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-      <!-- 3 -->
+
+      <!-- Ford Transit 10 Pax -->
       <div class="col-md-6 col-lg-4">
-        <div class="fleet-card">
+        <article class="fleet-card">
           <div class="fleet-media">
-            <img src="assets/images/ford-transit-10-pax.webp" alt="Black Ford Transit executive van" loading="lazy">
+            <img src="assets/images/ford-transit-10-pax.webp" alt="Ford Transit Executive Van — 10 Passengers" loading="lazy">
             <span class="fleet-pax">10 Passengers</span>
           </div>
           <div class="fleet-body">
             <div class="fleet-cls">Executive Van</div>
             <h3 class="serif">Ford Transit 10 Passengers</h3>
-            <div class="fleet-foot"><span class="note">Red-carpet arrivals</span><a href="#lead" class="reserve">Reserve →</a></div>
+            <div class="fleet-foot">
+              <span class="note">Red-carpet arrivals</span>
+              <a href="#online" class="reserve">Reserve →</a>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-      <!-- 4 -->
+
+      <!-- Mercedes Sprinter 12 Pax -->
       <div class="col-md-6 col-lg-4">
-        <div class="fleet-card">
+        <article class="fleet-card">
           <div class="fleet-media">
-            <img src="assets/images/mercedes-sprinter-12-pax.webp" alt="Black Audi executive car" loading="lazy">
+            <img src="assets/images/mercedes-sprinter-12-pax.webp" alt="Mercedes Sprinter Executive Van — 12 Passengers" loading="lazy">
             <span class="fleet-pax">12 Passengers</span>
           </div>
           <div class="fleet-body">
             <div class="fleet-cls">Executive Van</div>
             <h3 class="serif">Mercedes Sprinter 12 Passengers</h3>
-            <div class="fleet-foot"><span class="note">Corporate travel</span><a href="#lead" class="reserve">Reserve →</a></div>
+            <div class="fleet-foot">
+              <span class="note">Corporate travel</span>
+              <a href="#online" class="reserve">Reserve →</a>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-      <!-- 5 -->
+
+      <!-- Mercedes Sprinter 14 Pax -->
       <div class="col-md-6 col-lg-4">
-        <div class="fleet-card">
+        <article class="fleet-card">
           <div class="fleet-media">
-            <img src="assets/images/mercedes-sprinter-14-pax.webp" alt="Black luxury coupe" loading="lazy">
+            <img src="assets/images/mercedes-sprinter-14-pax.webp" alt="Mercedes Sprinter Executive Van — 14 Passengers" loading="lazy">
             <span class="fleet-pax">14 Passengers</span>
           </div>
           <div class="fleet-body">
             <div class="fleet-cls">Executive Van</div>
             <h3 class="serif">Mercedes Sprinter 14 Passengers</h3>
-            <div class="fleet-foot"><span class="note">Late-night style</span><a href="#lead" class="reserve">Reserve →</a></div>
+            <div class="fleet-foot">
+              <span class="note">Late-night style</span>
+              <a href="#online" class="reserve">Reserve →</a>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-      <!-- 6 -->
+
+      <!-- Ford Transit 14 Pax -->
       <div class="col-md-6 col-lg-4">
-        <div class="fleet-card">
+        <article class="fleet-card">
           <div class="fleet-media">
-            <img src="assets/images/ford-transit-15-pax.webp" alt="Black executive car on the road" loading="lazy">
+            <img src="assets/images/ford-transit-15-pax.webp" alt="Ford Transit Executive Van — 14 Passengers" loading="lazy">
             <span class="fleet-pax">14 Passengers</span>
           </div>
           <div class="fleet-body">
             <div class="fleet-cls">Executive Van</div>
             <h3 class="serif">Ford Transit 14 Passengers</h3>
-            <div class="fleet-foot"><span class="note">City &amp; airport</span><a href="#lead" class="reserve">Reserve →</a></div>
+            <div class="fleet-foot">
+              <span class="note">City &amp; airport</span>
+              <a href="#online" class="reserve">Reserve →</a>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ===================== TRANSPORTATION SERVICES (lifestyle images) ===================== -->
-<section class="section" id="services" style="padding-top:20px;">
+
+<!-- ===================== TRANSPORTATION SERVICES ===================== -->
+<section class="section" id="services" style="padding-top:20px;" data-screen-label="Services">
   <div class="wrap">
+
     <div class="sec-head-center">
-      <!-- <div class="eyebrow">What We Do</div> -->
-       <div class="hero-badge">What We Do</div>
+      <div class="hero-badge">What We Do</div>
       <h2 class="serif">Transportation Services</h2>
       <p>From the runway to the boardroom to the big night out — one trusted chauffeur partner for every journey.</p>
     </div>
-    <div class="row g-4" id="servicesGrid"></div>
+
+    <div class="row g-4">
+
+      <!-- 01 Airport Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=700&q=72" alt="Airport Transportation" loading="lazy">
+            <span class="svc-num serif">01</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 16l20-7-6 12-3-4-4-1z"/><path d="M22 2L11 13"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Airport Transportation</h3>
+            <p>On-time pickups &amp; drop-offs to JFK, LGA, EWR, BDL, HPN and beyond.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 02 Casino Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=700&q=72" alt="Casino Transportation" loading="lazy">
+            <span class="svc-num serif">02</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.3" fill="currentColor"/><circle cx="15" cy="15" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Casino Transportation</h3>
+            <p>First-class rides to Foxwoods, Mohegan Sun &amp; the region's top casinos.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 03 Corporate Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=72" alt="Corporate Transportation" loading="lazy">
+            <span class="svc-num serif">03</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Corporate Transportation</h3>
+            <p>Punctual executive travel for meetings, clients and conferences.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 04 Medical Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=700&q=72" alt="Medical Transportation" loading="lazy">
+            <span class="svc-num serif">04</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Medical Transportation</h3>
+            <p>Safe, courteous non-emergency rides to and from appointments.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 05 Private School Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=72" alt="Private School Transportation" loading="lazy">
+            <span class="svc-num serif">05</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M6 11v5c0 1 3 2.5 6 2.5S18 17 18 16v-5"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Private School Transportation</h3>
+            <p>Reliable, vetted chauffeurs for trusted daily student travel.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 06 Prom Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=72" alt="Prom Transportation" loading="lazy">
+            <span class="svc-num serif">06</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Prom Transportation</h3>
+            <p>Make the night unforgettable with a safe, head-turning arrival.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 07 Roadshow Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=72" alt="Roadshow Transportation" loading="lazy">
+            <span class="svc-num serif">07</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8.4 18h7.2M4 18V8h8l4 4v6"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Roadshow Transportation</h3>
+            <p>Multi-stop investor roadshows handled seamlessly, city to city.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 08 Leisure Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=72" alt="Leisure Transportation" loading="lazy">
+            <span class="svc-num serif">08</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l7-9 7 9M4 13h16l-1.5 7h-13z"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Leisure Transportation</h3>
+            <p>Nights out, tours and special occasions, all in effortless style.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 09 Cruise Ships Terminal -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=700&q=72" alt="Cruise Ships Terminal Transportation" loading="lazy">
+            <span class="svc-num serif">09</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 16l9-3 9 3-2 4H5z"/><path d="M12 3v10M8 9h8"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Cruise Ships Terminal</h3>
+            <p>Door-to-pier service to Cape Liberty, Brooklyn &amp; Manhattan.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 10 Funeral Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&q=72" alt="Funeral Transportation" loading="lazy">
+            <span class="svc-num serif">10</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v8M8 7h8M5 21V11h14v10z"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Funeral Transportation</h3>
+            <p>Dignified, compassionate group transportation for families.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 11 Group Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=72" alt="Group Transportation" loading="lazy">
+            <span class="svc-num serif">11</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 .5-3.5 2-4"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Group Transportation</h3>
+            <p>Sprinters and vans for teams, weddings, tours and events.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 12 Hotel Transportation -->
+      <div class="col-sm-6 col-lg-3">
+        <article class="svc-card">
+          <div class="svc-media">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=72" alt="Hotel Transportation" loading="lazy">
+            <span class="svc-num serif">12</span>
+            <span class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V4h12v17M16 9h4v12M8 8h2M8 12h2M8 16h2"/></svg>
+            </span>
+          </div>
+          <div class="svc-body">
+            <h3>Hotel Transportation</h3>
+            <p>Seamless hotel transfers and concierge rides across CT, NY &amp; NJ.</p>
+            <div class="svc-actions">
+              <a href="#online" class="svc-btn primary">Book Now →</a>
+              <a href="#fleet" class="svc-btn secondary">View Fleet</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
   </div>
 </section>
 
+
 <!-- ===================== LOCATION-BASED LIMO ===================== -->
-<section class="locale">
+<section class="locale" data-screen-label="Neighborhood Service">
   <div class="wrap">
     <div class="row g-5 align-items-center">
+
       <div class="col-lg-5">
         <div class="hero-badge">Neighborhood Service</div>
         <h2>Limousine Service Where You Live</h2>
         <p>Local chauffeurs who know every back road, school pickup line and station platform. Trusted black-car service tailored to the communities of Westchester and Fairfield County.</p>
-        <a href="#lead" class="btn btn-ghost" style="margin-top:26px;border-width:1px;">Reserve in Your Area →</a>
+        <a href="#online" class="btn btn-ghost" style="margin-top:26px;border-width:1px;">Reserve in Your Area →</a>
       </div>
+
       <div class="col-lg-7">
+
         <a href="#" class="loc-card">
           <div class="loc-code serif">BH</div>
-          <div style="flex:1;"><h3>Bedford Hills, NY</h3><div class="desc">Premium limo &amp; black-car service for Bedford Hills residents and the Harlem Line commute.</div></div>
-          <div class="loc-arrow">→</div>
+          <div style="flex:1;">
+            <h3>Bedford Hills, NY</h3>
+            <div class="desc">Premium limo &amp; black-car service for Bedford Hills residents and the Harlem Line commute.</div>
+          </div>
+          <div class="loc-arrow" aria-hidden="true">→</div>
         </a>
+
         <a href="#" class="loc-card">
           <div class="loc-code serif">BD</div>
-          <div style="flex:1;"><h3>Bedford, NY</h3><div class="desc">Discreet chauffeured travel for estate, equestrian and country-club destinations.</div></div>
-          <div class="loc-arrow">→</div>
+          <div style="flex:1;">
+            <h3>Bedford, NY</h3>
+            <div class="desc">Discreet chauffeured travel for estate, equestrian and country-club destinations.</div>
+          </div>
+          <div class="loc-arrow" aria-hidden="true">→</div>
         </a>
+
         <a href="#" class="loc-card" style="margin-bottom:0;">
           <div class="loc-code serif">KT</div>
-          <div style="flex:1;"><h3>Katonah, NY</h3><div class="desc">Reliable local car service to MetroNorth, airports and Westchester landmarks.</div></div>
-          <div class="loc-arrow">→</div>
+          <div style="flex:1;">
+            <h3>Katonah, NY</h3>
+            <div class="desc">Reliable local car service to MetroNorth, airports and Westchester landmarks.</div>
+          </div>
+          <div class="loc-arrow" aria-hidden="true">→</div>
         </a>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== ROUND-TRIP ROUTES (enhanced hover) ===================== -->
-<section class="section">
+
+<!-- ===================== ROUND-TRIP ROUTES ===================== -->
+<section class="section" data-screen-label="Round-Trip Routes">
   <div class="wrap">
+
     <div class="sec-head-center">
       <div class="hero-badge">There &amp; Back, Seamlessly</div>
       <h2 class="serif">Round-Trip Routes, Booked Once</h2>
       <p>One confirmed chauffeur for the whole journey — no scrambling for a ride home. Popular round-trip routes across the tri-state and New England.</p>
     </div>
-    <div class="row g-3" id="routesGrid"></div>
+
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Airport Limo Car Service CT to &amp; from BDL and HVN</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Airport Limo Car Service to &amp; from TEB and ISP</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Airport Limo Car Service to/from Hotels in CT, NY, NJ &amp; PA</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Airport Limo Car Service to JFK, LGA, EWR &amp; HPN</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Corporate Black Car Chauffeur Service across CT, NY &amp; NJ</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Limo Car Service to Concerts — XFinity Center</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Limo Car Service for UBS Arena Events in NY, CT &amp; NJ</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Limo Car Service to Cruise Terminals in NY, NJ &amp; MA</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Limo Service to/from Country Clubs &amp; Golf Courses in CT, NY &amp; NJ</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="#online" class="route-card">
+          <span class="route-ico" aria-hidden="true">⇆</span>
+          <span class="route-text">Round-Trip Wine Tours Limo Car Service to/from CT, NY &amp; NJ</span>
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
+
 <!-- ===================== BOOK CTA ===================== -->
-<!-- <section class="cta-band" id="book">
+<section class="cta-band" id="book" data-screen-label="Book CTA">
   <div class="cta-inner">
+
     <div class="hero-badge">Ready When You Are</div>
-    <h2>Book a Limo in Under 60 Seconds</h2>
-    <p>Call our 24/7 dispatch or reserve online. Flat rates, no surge pricing, and a confirmation you can count on.</p>
-    <div class="cta-actions">
-      <a href="tel:18004759975" class="btn btn-gold">📞 1 (800) 475-9975</a>
-      <a href="#online" class="btn btn-ghost">Reserve Online →</a>
-    </div>
-  </div>
-</section> -->
-
-<section class="cta-band" id="book">
-  <div class="cta-inner">
-
-    <div class="hero-badge">
-      Ready When You Are
-    </div>
 
     <h2>Book a Limo in Under 60 Seconds</h2>
 
@@ -465,58 +784,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <div class="cta-actions">
 
-      <!-- CALL -->
-      <a href="tel:18004759975"
-         class="btn btn-call">
-
-        <svg viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-          19.79 19.79 0 0 1-8.63-3.07
-          19.5 19.5 0 0 1-6-6
-          19.79 19.79 0 0 1-3.07-8.67
-          A2 2 0 0 1 4.11 2h3
-          a2 2 0 0 1 2 1.72
-          c.12.9.32 1.78.59 2.64
-          a2 2 0 0 1-.45 2.11
-          L8.09 9.91
-          a16 16 0 0 0 6 6
-          l1.44-1.16
-          a2 2 0 0 1 2.11-.45
-          c.86.27 1.74.47 2.64.59
-          A2 2 0 0 1 22 16.92z"/>
+      <a href="tel:18004759975" class="btn btn-call" aria-label="Call 1 800 475 9975">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.16a2 2 0 0 1 2.11-.45c.86.27 1.74.47 2.64.59A2 2 0 0 1 22 16.92z"/>
         </svg>
-
         <span>1 (800) 475–9975</span>
       </a>
 
-      <!-- WHATSAPP -->
-     <a href="https://wa.me/18004759975"
-   target="_blank"
-   class="btn btn-whatsapp">
+      <a href="https://wa.me/18004759975" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" aria-label="Message us on WhatsApp">
+        <i class="fa-brands fa-whatsapp wa-icon" aria-hidden="true"></i>
+        <span>WhatsApp Us</span>
+      </a>
 
-  <i class="fa-brands fa-whatsapp wa-fa-icon"></i>
-
-  <span>WhatsApp Us</span>
-
-</a>
-
-      <!-- RESERVE -->
-      <a href="#online"
-         class="btn btn-reserve">
-
+      <a href="#online" class="btn btn-reserve">
         <span>Reserve Online</span>
-
-        <svg viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M5 12h14"/>
           <path d="M13 5l7 7-7 7"/>
         </svg>
-
       </a>
 
     </div>
@@ -524,57 +809,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </section>
 
 
-
-<!-- ===================== BOOK ONLINE (iframe) ===================== -->
-<!-- <section class="online" id="online">
-  <div class="online-inner">
-    <div class="hero-badge">Book Online</div>
-    <h2 class="serif">Real-Time Quotes &amp; Instant Confirmation</h2>
-    <p>Use our secure live reservation system to price your trip, choose your vehicle and confirm in real time.</p>
-    <div class="steps">
-      <div class="step"><div class="num serif">1</div><div class="t">Trip Details</div><div class="d">Pickup, dropoff &amp; time</div></div>
-      <div class="step"><div class="num serif">2</div><div class="t">Choose Vehicle</div><div class="d">Sedan to Sprinter</div></div>
-      <div class="step"><div class="num serif">3</div><div class="t">Confirm &amp; Go</div><div class="d">Instant confirmation</div></div>
-    </div>
-    <div class="portal">
-      <div class="portal-bar">
-        <div class="lbl"><span style="font-size:15px;">🔒</span> Secure Live Reservation System</div>
-        <a href="https://book.mylimobiz.com/v4/ctaverylimo" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:12.5px;padding:8px 15px;">Open Portal ↗</a>
-      </div>
-      <iframe src="https://book.mylimobiz.com/v4/ctaverylimo" title="Online Reservations" loading="lazy"></iframe>
-    </div>
-    <div class="portal-fallback">
-      <p>Booking portal not appearing above? Launch it securely in a new tab.</p>
-      <a href="https://book.mylimobiz.com/v4/ctaverylimo" target="_blank" rel="noopener" class="btn btn-ghost">Open Full Booking Portal →</a>
-    </div>
-  </div>
-</section> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ===================== WELCOME / ABOUT ===================== -->
-<section class="section" id="about" style="padding-bottom:70px;">
+<section class="section" id="about" style="padding-bottom:70px;" data-screen-label="About">
   <div class="wrap">
+
     <div class="row g-5 align-items-center about-grid">
+
       <div class="col-lg-6 about-copy">
         <div class="hero-badge">Welcome to Book N Ride</div>
         <h2>Connecticut Limousine &amp; Car Service — Ride in Style</h2>
@@ -585,70 +825,100 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
           <a href="#contact" class="btn btn-outline">Contact Dispatch</a>
         </div>
       </div>
+
       <div class="col-lg-6">
         <div class="about-media">
-          <div class="frame"></div>
+          <div class="frame" aria-hidden="true"></div>
           <img src="https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?auto=format&fit=crop&w=900&q=72" alt="Luxury black chauffeured car" loading="lazy">
-          <div class="about-badge"><div class="big serif">27+ yrs</div><div class="sm">of trusted service</div></div>
+          <div class="about-badge">
+            <div class="big serif">27+ yrs</div>
+            <div class="sm">of trusted service</div>
+          </div>
         </div>
       </div>
+
     </div>
+
     <div class="row g-3">
+
       <div class="col-6 col-lg-3">
         <div class="pillar">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-          <h3>Professional Chauffeurs</h3><p>Licensed, background-checked and trained in discretion.</p>
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <h3>Professional Chauffeurs</h3>
+          <p>Licensed, background-checked and trained in discretion.</p>
         </div>
       </div>
+
       <div class="col-6 col-lg-3">
         <div class="pillar">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l2-6h14l2 6M5 13h14v5H5z"/><circle cx="8" cy="18" r="1.6"/><circle cx="16" cy="18" r="1.6"/></svg></div>
-          <h3>Immaculate Fleet</h3><p>Late-model vehicles, detailed before every single trip.</p>
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l2-6h14l2 6M5 13h14v5H5z"/><circle cx="8" cy="18" r="1.6"/><circle cx="16" cy="18" r="1.6"/></svg>
+          </div>
+          <h3>Immaculate Fleet</h3>
+          <p>Late-model vehicles, detailed before every single trip.</p>
         </div>
       </div>
+
       <div class="col-6 col-lg-3">
         <div class="pillar">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.3 1.1-2 2.5-2s2.5.7 2.5 2-1 1.7-2.5 2-2.5.7-2.5 2 1.1 2 2.5 2 2.5-.7 2.5-2"/></svg></div>
-          <h3>Flat-Rate Pricing</h3><p>Transparent quotes with no surge and no surprises.</p>
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.3 1.1-2 2.5-2s2.5.7 2.5 2-1 1.7-2.5 2-2.5.7-2.5 2 1.1 2 2.5 2 2.5-.7 2.5-2"/></svg>
+          </div>
+          <h3>Flat-Rate Pricing</h3>
+          <p>Transparent quotes with no surge and no surprises.</p>
         </div>
       </div>
+
       <div class="col-6 col-lg-3">
         <div class="pillar">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-          <h3>On-Time, Always</h3><p>Flight-tracked pickups and a 24/7 monitored dispatch.</p>
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          </div>
+          <h3>On-Time, Always</h3>
+          <p>Flight-tracked pickups and a 24/7 monitored dispatch.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
+
 <!-- ===================== AIRPORTS BANNER ===================== -->
-<section style="padding:0 5vw 60px;">
+<section style="padding:0 5vw 60px;" data-screen-label="Airports Banner">
   <div class="airbanner">
-    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=70" alt="Air travel" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=70" alt="Commercial airplane on the runway" loading="lazy">
     <div class="airbanner-inner">
       <div>
         <div class="hero-badge">Executive Transportation</div>
         <h2 class="serif">To Every Tri-State Area Airport</h2>
         <p>Flight-tracked pickups, meet-and-greet service and complimentary wait time. We monitor your inbound so your chauffeur is curbside the moment you land — at JFK, LaGuardia, Newark, Westchester, Bradley and beyond.</p>
       </div>
-      <div class="air-chips">
-        <span class="air-chip">JFK</span><span class="air-chip">LGA</span><span class="air-chip">EWR</span>
-        <span class="air-chip">HPN</span><span class="air-chip">BDL</span><span class="air-chip">HVN</span>
-        <span class="air-chip">TEB</span><span class="air-chip">ISP</span>
+      <div class="air-chips" aria-label="Airports we serve">
+        <span class="air-chip">JFK</span>
+        <span class="air-chip">LGA</span>
+        <span class="air-chip">EWR</span>
+        <span class="air-chip">HPN</span>
+        <span class="air-chip">BDL</span>
+        <span class="air-chip">HVN</span>
+        <span class="air-chip">TEB</span>
+        <span class="air-chip">ISP</span>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- ===================== COVID NOTICE ===================== -->
-<section style="padding:0 5vw 84px;">
+<section style="padding:0 5vw 84px;" data-screen-label="Safety Notice">
   <div class="covid">
     <div style="flex:1;min-width:280px;">
       <h3>Coronavirus Update (COVID-19) — Your Safety First</h3>
       <p>Book N Ride is dedicated to prioritizing the safety and wellbeing of all clients through a strict protocol — vehicles sanitized before every trip, hand sanitizer on board, and health-screened chauffeurs. Travel with total peace of mind.</p>
     </div>
-    <div class="covid-chips">
+    <div class="covid-chips" aria-label="Safety measures">
       <span class="covid-chip">Sanitized vehicles</span>
       <span class="covid-chip">Hand sanitizer on board</span>
       <span class="covid-chip">Health-screened drivers</span>
@@ -656,443 +926,455 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   </div>
 </section>
 
-<!-- ===================== DIRECTORY (Destinations We Serve) ===================== -->
-<section style="padding:0 5vw 86px;">
+
+<!-- ===================== DIRECTORY ===================== -->
+<section style="padding:0 5vw 86px;" data-screen-label="Destinations">
   <div class="wrap" style="padding:0;">
+
     <div class="sec-head-center">
       <div class="hero-badge">Where We Drive</div>
       <h2 class="serif">Destinations We Serve</h2>
     </div>
+
     <div class="directory">
-      <div class="row g-0" id="directoryGrid"></div>
+      <div class="row g-0">
+
+        <!-- Airports -->
+        <div class="col-6 col-lg-3">
+          <div class="dir-col">
+            <div class="head">
+              <span class="ic" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 16l20-7-6 12-3-4-4-1z"/></svg>
+              </span>
+              <h3>Airports</h3>
+            </div>
+            <div class="dir-links">
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>JFK International</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>LaGuardia (LGA)</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Newark (EWR)</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Westchester (HPN)</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Bradley Intl (BDL)</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Tweed-New Haven (HVN)</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Teterboro (TEB)</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Long Island (ISP)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cruise Terminals -->
+        <div class="col-6 col-lg-3">
+          <div class="dir-col">
+            <div class="head">
+              <span class="ic" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 16l9-3 9 3-2 4H5z"/><path d="M12 4v9"/></svg>
+              </span>
+              <h3>Cruise Terminals</h3>
+            </div>
+            <div class="dir-links">
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Cape Liberty, Bayonne NJ</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Brooklyn Cruise Terminal</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Manhattan Cruise Terminal</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Black Falcon, Boston MA</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Port of New York/NJ</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Cape Cod, MA</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stadiums & Arenas -->
+        <div class="col-6 col-lg-3">
+          <div class="dir-col">
+            <div class="head">
+              <span class="ic" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="12" rx="9" ry="5"/><path d="M7 12c0-2 2-3 5-3s5 1 5 3"/></svg>
+              </span>
+              <h3>Stadiums &amp; Arenas</h3>
+            </div>
+            <div class="dir-links">
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>UBS Arena</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>MetLife Stadium</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Yankee Stadium</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Citi Field</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Madison Square Garden</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>XFinity Center</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counties -->
+        <div class="col-6 col-lg-3">
+          <div class="dir-col">
+            <div class="head">
+              <span class="ic" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+              </span>
+              <h3>Counties</h3>
+            </div>
+            <div class="dir-links">
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Fairfield County, CT</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>New Haven County, CT</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Hartford County, CT</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Westchester County, NY</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Litchfield County, CT</a>
+              <a href="#"><span class="bullet" aria-hidden="true">▸</span>Nassau County, NY</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 
 
-
-<section class="airport-executive section">
-
+<!-- ===================== AIRPORT EXECUTIVE ===================== -->
+<section class="airport-executive section" data-screen-label="Airport Executive Service">
   <div class="wrap">
-
     <div class="airport-grid">
 
       <!-- LEFT IMAGE -->
       <div class="airport-media">
-
-        <img
-          src="./assets/images/airportservices.jpg"
-          alt="Airport Executive Car Service">
-
+        <img src="assets/images/airportservices.jpg" alt="Professional chauffeur assisting a passenger — Book N Ride Airport Executive Car Service" loading="lazy">
         <div class="airport-overlay">
-
-          <div class="hero-badge">
-            Since 1997
-          </div>
-
-          <h3 class="serif">
-            Luxury Airport Executive Service
-          </h3>
-
-          <p>
-            Professional airport transportation
-            across Connecticut, New York
-            & New Jersey.
-          </p>
-
+          <div class="hero-badge">Since 1997</div>
+          <h3 class="serif">Luxury Airport Executive Service</h3>
+          <p>Professional airport transportation across Connecticut, New York &amp; New Jersey.</p>
         </div>
-
       </div>
 
       <!-- RIGHT CONTENT -->
       <div class="airport-card">
 
-        <div class="hero-badge">
-          Airport Executive Car Service
-        </div>
+        <div class="hero-badge">Airport Executive Car Service</div>
 
-        <h2 class="serif">
-          BOOK N RIDE Airport Executive Car Service
-        </h2>
+        <h2 class="serif">BOOK N RIDE Airport Executive Car Service</h2>
 
         <p class="airport-intro">
-          Our limousine service will send you
-          the sort of car you need — whether
-          it’s a van, luxury limousine, executive
-          black car, or larger vehicle for your group.
-          Ask us for recommendations and we’ll help
-          you choose the best option.
+          Our limousine service will send you the sort of car you need — whether it's a van, luxury limousine, executive black car, or larger vehicle for your group. Ask us for recommendations and we'll help you choose the best option.
         </p>
-
-        <!-- CONTENT BLOCKS -->
 
         <div class="airport-block">
           <h4>Pickup Flexibility</h4>
-
-          <p>
-            Our service will pick you up at home,
-            the office, or even allow stops along
-            the way to the airport. Drivers can pick
-            up several members of your group from
-            different locations while ensuring
-            everyone reaches the airport on time.
-          </p>
+          <p>Our service will pick you up at home, the office, or even allow stops along the way to the airport. Drivers can pick up several members of your group from different locations while ensuring everyone reaches the airport on time.</p>
         </div>
 
         <div class="airport-block">
           <h4>Luggage Assistance</h4>
-
-          <p>
-            We assist with luggage when entering
-            and exiting the vehicle. Our chauffeurs
-            help ensure a smooth airport arrival,
-            showing you where to check bags
-            or where to go for flight check-in.
-          </p>
+          <p>We assist with luggage when entering and exiting the vehicle. Our chauffeurs help ensure a smooth airport arrival, showing you where to check bags or where to go for flight check-in.</p>
         </div>
 
         <div class="airport-block">
           <h4>How Long Does The Drive Take?</h4>
-
-          <p>
-            Travel time depends on your location
-            and airport, but our chauffeurs know
-            the fastest routes and traffic alternatives.
-            Skip the driving stress and let us handle
-            the journey while you relax.
-          </p>
+          <p>Travel time depends on your location and airport, but our chauffeurs know the fastest routes and traffic alternatives. Skip the driving stress and let us handle the journey while you relax.</p>
         </div>
 
         <div class="airport-block">
           <h4>No Parking Hassles</h4>
-
-          <p>
-            Avoid expensive airport parking,
-            long walks, and the frustration of
-            finding your car after travel.
-            A private chauffeur means a smooth
-            arrival and departure every time.
-          </p>
+          <p>Avoid expensive airport parking, long walks, and the frustration of finding your car after travel. A private chauffeur means a smooth arrival and departure every time.</p>
         </div>
 
         <div class="airport-block">
-          <h4>Book Online & Save $25</h4>
-
-          <p>
-            Reserve online and customize your
-            trip with your preferred vehicle,
-            route and timing. Arrive with enough
-            time for airport security and enjoy
-            a stress-free departure.
-          </p>
+          <h4>Book Online &amp; Save $25</h4>
+          <p>Reserve online and customize your trip with your preferred vehicle, route and timing. Arrive with enough time for airport security and enjoy a stress-free departure.</p>
         </div>
-
-        <!-- CTA -->
 
         <div class="airport-actions">
 
-          <a href="#lead"
-             class="btn btn-gold">
-            Book Ride →
+          <a href="#online" class="btn btn-gold">Book Ride →</a>
+
+          <a href="tel:18004759975" class="btn btn-ghost phone-btn" aria-label="Call 1 800 475 9975">
+            <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.16a2 2 0 0 1 2.11-.45c.86.27 1.74.47 2.64.59A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>1 (800) 475-9975</span>
           </a>
 
-      
-<a href="tel:18004759975"
-   class="btn btn-ghost phone-btn">
-
-  <svg
-    class="phone-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round">
-
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-    19.79 19.79 0 0 1-8.63-3.07
-    19.5 19.5 0 0 1-6-6
-    19.79 19.79 0 0 1-3.07-8.67
-    A2 2 0 0 1 4.11 2h3
-    a2 2 0 0 1 2 1.72
-    c.12.9.32 1.78.59 2.64
-    a2 2 0 0 1-.45 2.11
-    L8.09 9.91
-    a16 16 0 0 0 6 6
-    l1.44-1.16
-    a2 2 0 0 1 2.11-.45
-    c.86.27 1.74.47 2.64.59
-    A2 2 0 0 1 22 16.92z"/>
-  </svg>
-
-  <span>1 (800) 475-9975</span>
-
-</a>
-
-
-
         </div>
-
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 
-
-
-
-
-
 <!-- ===================== TESTIMONIALS ===================== -->
-<section class="testi" id="testimonials">
+<section class="testi" id="testimonials" data-screen-label="Testimonials">
+
   <div class="testi-head">
     <div class="sec-head-center">
       <div class="hero-badge">Five-Star Rides</div>
       <h2 class="serif">What Our Clients Say</h2>
     </div>
   </div>
+
   <div class="marquee-mask">
-    <div class="marquee" id="marquee"></div>
+    <div class="marquee">
+
+      <!-- ── SET 1 — primary (read by screen readers) ── -->
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">Flawless 4 AM airport pickup — the chauffeur was waiting, the car was spotless. Book N Ride is the only service I trust for my JFK runs.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">D</div>
+          <div>
+            <div class="tname">Daniel R.</div>
+            <div class="tloc">Greenwich, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">We booked a Sprinter for our wedding party. On time, immaculate, and the chauffeur went above and beyond for us all night.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">P</div>
+          <div>
+            <div class="tname">Priya &amp; Marcus</div>
+            <div class="tloc">Stamford, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">Our firm uses Book N Ride for every client roadshow. Punctual, professional, and perfectly invisible when it needs to be.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">K</div>
+          <div>
+            <div class="tname">Karen L.</div>
+            <div class="tloc">Corporate Travel Manager</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">Booked a last-minute SUV to LaGuardia and they still arrived 15 minutes early. Absolute lifesavers — highly recommended.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">S</div>
+          <div>
+            <div class="tname">Sophia M.</div>
+            <div class="tloc">Westport, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">Our prom night was perfect — the kids felt like celebrities and we parents felt completely at ease the whole evening.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">A</div>
+          <div>
+            <div class="tname">The Alvarez Family</div>
+            <div class="tloc">Norwalk, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">Cruise terminal drop-off in Bayonne was smooth and stress-free. We will be booking every single sailing with them.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">R</div>
+          <div>
+            <div class="tname">Robert &amp; Jean</div>
+            <div class="tloc">Danbury, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">Monthly casino runs to Mohegan Sun are always comfortable, always on time, and always a fair flat rate. First class.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">T</div>
+          <div>
+            <div class="tname">Thomas K.</div>
+            <div class="tloc">New Haven, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard">
+        <div class="tstars" aria-label="5 stars">★★★★★</div>
+        <p class="tquote">From Bradley to our hotel the chauffeur was professional and the car immaculate. Easily five stars, every time.</p>
+        <div class="tfoot">
+          <div class="tavatar serif" aria-hidden="true">A</div>
+          <div>
+            <div class="tname">Aisha R.</div>
+            <div class="tloc">Hartford, CT</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── SET 2 — duplicate for seamless CSS loop (hidden from assistive tech) ── -->
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">Flawless 4 AM airport pickup — the chauffeur was waiting, the car was spotless. Book N Ride is the only service I trust for my JFK runs.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">D</div>
+          <div><div class="tname">Daniel R.</div><div class="tloc">Greenwich, CT</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">We booked a Sprinter for our wedding party. On time, immaculate, and the chauffeur went above and beyond for us all night.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">P</div>
+          <div><div class="tname">Priya &amp; Marcus</div><div class="tloc">Stamford, CT</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">Our firm uses Book N Ride for every client roadshow. Punctual, professional, and perfectly invisible when it needs to be.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">K</div>
+          <div><div class="tname">Karen L.</div><div class="tloc">Corporate Travel Manager</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">Booked a last-minute SUV to LaGuardia and they still arrived 15 minutes early. Absolute lifesavers — highly recommended.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">S</div>
+          <div><div class="tname">Sophia M.</div><div class="tloc">Westport, CT</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">Our prom night was perfect — the kids felt like celebrities and we parents felt completely at ease the whole evening.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">A</div>
+          <div><div class="tname">The Alvarez Family</div><div class="tloc">Norwalk, CT</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">Cruise terminal drop-off in Bayonne was smooth and stress-free. We will be booking every single sailing with them.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">R</div>
+          <div><div class="tname">Robert &amp; Jean</div><div class="tloc">Danbury, CT</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">Monthly casino runs to Mohegan Sun are always comfortable, always on time, and always a fair flat rate. First class.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">T</div>
+          <div><div class="tname">Thomas K.</div><div class="tloc">New Haven, CT</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" aria-hidden="true">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">From Bradley to our hotel the chauffeur was professional and the car immaculate. Easily five stars, every time.</p>
+        <div class="tfoot">
+          <div class="tavatar serif">A</div>
+          <div><div class="tname">Aisha R.</div><div class="tloc">Hartford, CT</div></div>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<!-- ===================== AIRPORT EXECUTIVE SPLIT ===================== -->
-<!-- <section class="exec">
-  <div class="wrap">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5">
-        <div class="exec-media">
-          <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1000&q=72" alt="Airport executive car service" loading="lazy">
-        </div>
-      </div>
-      <div class="col-lg-7 exec-copy">
-        <div class="eyebrow">Book N Ride</div>
-        <h2>Airport Executive Car Service</h2>
-        <p>You are welcome to Book N Ride Executive Car Service, which is the king of limousine services in Connecticut, New York and New Jersey.</p>
-        <p>Book N Ride Executive Car Service prides itself to be the top in terms of the services they provide to their list of clientele. Book N Ride has been providing excellent car service since 1997.</p>
-        <div class="why">
-          <div class="lbl">Why Clients Choose Us</div>
-          <div class="why-grid">
-            <div><span>✓</span> On-time, every time</div>
-            <div><span>✓</span> Flat-rate, no surge</div>
-            <div><span>✓</span> Licensed &amp; fully insured</div>
-            <div><span>✓</span> 24/7 live dispatch</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- ===================== FOOTER ===================== -->
-<!-- <footer class="site-footer" id="contact">
+<footer class="site-footer" id="contact" data-screen-label="Footer">
   <div class="wrap">
-    <div class="footer-top">
-      <div class="row g-5">
-        <div class="col-lg-4 footer-brand">
-          <img src="assets/images/booknride-logo.webp" alt="Book N Ride">
-          <p>The king of limousine service in Connecticut, New York and New Jersey — luxury ground transportation since 1997.</p>
-          <div class="footer-contact">
-            <a href="tel:18004759975"><span class="ic">☎</span>1 (800) 475-9975</a>
-            <a href="mailto:Info@bookaridelimo.com"><span class="ic">✉</span>Info@bookaridelimo.com</a>
-            <div><span class="ic">⌂</span>734 Knapps Street, Fairfield, CT 06824</div>
-            <div><span class="ic">⌂</span>1215 Oceans Ave, Brooklyn, NY 11230</div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-2 footer-col">
-          <h4>Services</h4>
-          <div class="links">
-            <a href="#services">Airport Transportation</a>
-            <a href="#services">Corporate Transportation</a>
-            <a href="#services">Casino Transportation</a>
-            <a href="#services">Cruise Terminal</a>
-            <a href="#services">Wedding &amp; Prom</a>
-            <a href="#services">Group Travel</a>
-          </div>
-        </div>
-        <div class="col-6 col-lg-2 footer-col">
-          <h4>Company</h4>
-          <div class="links">
-            <a href="#about">About Us</a>
-            <a href="#fleet">Our Fleet</a>
-            <a href="#book">Fares</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#">Careers</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-        <div class="col-lg-4 footer-col">
-          <h4>Stay in Touch</h4>
-          <p>24/7 reservations &amp; dispatch. Follow us for offers.</p>
-          <div class="socials">
-            <a href="#" title="Facebook">f</a>
-            <a href="#" title="LinkedIn">in</a>
-            <a href="#" title="Instagram">ig</a>
-            <a href="#" title="Twitter">t</a>
-          </div>
-          <a href="#lead" class="btn btn-ghost">Get a Free Quote</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NEW: centered legal links band, just above the copyright -->
-  <!-- <div class="legal-band">
-    <div class="legal-links">
-      <a href="#">Privacy Policy</a>
-      <span class="legal-sep"></span>
-      <a href="#">Terms of Service</a>
-      <span class="legal-sep"></span>
-      <a href="#">Service Area</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span class="copy">© <span id="year">2026</span> Book N Ride Executive Car Service.</span>
-    <span class="credit">Designed &amp; Managed by <a href="#">DUENCY</a></span>
-  </div>
-</footer>  -->
-
-
-
-
-
-
-<footer class="site-footer" id="contact">
-  <div class="wrap">
-
     <div class="footer-grid">
 
-      <!-- LEFT BRAND -->
+      <!-- BRAND COLUMN -->
       <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="Book N Ride">
+        <img src="assets/images/logo.png" alt="Book N Ride Executive Car Service" width="135" height="135" loading="lazy">
 
-        <p>
-          Premium limousine & executive transportation across
-          Connecticut, New York and New Jersey since 1997.
-          Luxury rides, airport transfers & corporate travel.
-        </p>
+        <p>Premium limousine &amp; executive transportation across Connecticut, New York and New Jersey since 1997. Luxury rides, airport transfers &amp; corporate travel.</p>
 
-        <div class="footer-contact">
+        <address class="footer-contact">
 
           <a href="tel:18004759975" class="contact-item">
-            <span class="contact-icon">
-  <i class="fa-solid fa-phone-volume"></i>
-</span>
+            <span class="contact-icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></span>
             <span>1 (800) 475-9975</span>
           </a>
 
           <a href="mailto:Info@bookaridelimo.com" class="contact-item">
-            <span class="contact-icon">
-  <i class="fa-solid fa-envelope"></i>
-</span>
+            <span class="contact-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
             <span>Info@bookaridelimo.com</span>
           </a>
 
           <div class="contact-item">
-            <span class="contact-icon">
-  <i class="fa-solid fa-location-dot"></i>
-</span>
+            <span class="contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
             <span>734 Knapps Street, Fairfield, CT 06824</span>
           </div>
 
           <div class="contact-item">
-           <span class="contact-icon">
-  <i class="fa-solid fa-location-dot"></i>
-</span>
+            <span class="contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
             <span>1215 Oceans Ave, Brooklyn, NY 11230</span>
           </div>
 
-        </div>
+        </address>
       </div>
 
-      <!-- SERVICES -->
-      <!-- SERVICES -->
-<div class="footer-col">
-  <h4>Services</h4>
+      <!-- SERVICES COLUMN -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <nav class="footer-links" aria-label="Services links">
+          <a href="#services">Airport Transportation</a>
+          <a href="#">Bedford Hills</a>
+          <a href="#">Bedford, NY</a>
+          <a href="#">Boston to New York Car Service</a>
+          <a href="#services">Casino Transportation</a>
+          <a href="#services">Corporate Transportation</a>
+          <a href="#services">Cruise Ships Terminal</a>
+          <a href="#services">Funeral Transportation</a>
+          <a href="#services">Group Transportation</a>
+          <a href="#services">Hotel Transportation</a>
+          <a href="#">Katonah NY</a>
+          <a href="#services">Leisure Transportation</a>
+        </nav>
+      </div>
 
-  <div class="footer-links">
+      <!-- LINKS COLUMN -->
+      <div class="footer-col">
+        <h4>Links</h4>
+        <nav class="footer-links" aria-label="Site links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#">Service Area</a>
+          <a href="#fleet">Fleet</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#">Careers</a>
+          <a href="#online">Web App</a>
+        </nav>
+      </div>
 
-    <a href="#services">Airport Transportation</a>
-    <a href="#services">Bedford Hills</a>
-    <a href="#services">Bedford, NY</a>
-    <a href="#services">Boston to New York Car Service</a>
-    <a href="#services">Casino Transportation</a>
-    <a href="#services">Corporate Transportation</a>
-    <a href="#services">Cruise Ships Terminal</a>
-    <a href="#services">Funeral Transportation</a>
-    <a href="#services">Group Transportation</a>
-    <a href="#services">Hotel Transportation</a>
-    <a href="#services">Katonah NY</a>
-    <a href="#services">Leisure Transportation</a>
-
-  </div>
-</div>
-
-      <!-- COMPANY -->
-      <!-- LINKS -->
-<div class="footer-col">
-  <h4>Links</h4>
-
-  <div class="footer-links">
-
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#">Service Area</a>
-    <a href="#fleet">Fleet</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#">Careers</a>
-    <a href="#online">Web App</a>
-
-  </div>
-</div>
-
-      <!-- RIGHT SIDE -->
+      <!-- STAY CONNECTED -->
       <div class="footer-col stay-touch">
         <h4>Stay Connected</h4>
+        <p>24/7 reservations &amp; dispatch support. Follow us for offers &amp; updates.</p>
 
-        <p>
-          24/7 reservations & dispatch support.
-          Follow us for offers & updates.
-        </p>
-
-        <div class="socials">
-
-  <a href="#" title="Facebook">
-    <i class="fa-brands fa-facebook-f"></i>
-  </a>
-
-  <a href="#" title="LinkedIn">
-    <i class="fa-brands fa-linkedin-in"></i>
-  </a>
-
-  <a href="#" title="Instagram">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-
-  <a href="#" title="Twitter">
-    <i class="fa-brands fa-x-twitter"></i>
-  </a>
-
-</div>
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
 
         <div class="footer-btns">
-          <a href="#lead" class="btn btn-gold">
-            Get Free Quote →
+          <a href="#online" class="btn btn-gold">Get Free Quote →</a>
+          <a href="https://wa.me/18004759975" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="WhatsApp us">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            WhatsApp Us
           </a>
-
-         <a href="https://wa.me/18004759975"
-class="btn-whatsapp">
-
-  <i class="fa-brands fa-whatsapp"></i>
-  WhatsApp Us
-
-</a>
         </div>
       </div>
 
@@ -1100,55 +1382,60 @@ class="btn-whatsapp">
 
     <!-- LEGAL -->
     <div class="footer-legal">
-
-      <div class="legal-links">
+      <nav class="legal-links" aria-label="Legal links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">Service Area</a>
-      </div>
-
+      </nav>
       <div class="footer-bottom">
-
-        <span>
-          © 2026 Book N Ride Executive Car Service.
-        </span>
-
-        <span class="footer-credit">
-          Designed by
-          <a href="https://www.duency.com/">DUENCY</a>
-        </span>
-
+        <span>© <span id="year">2026</span> Book N Ride Executive Car Service.</span>
+        <span class="footer-credit">Designed by <a href="https://www.duency.com/" target="_blank" rel="noopener noreferrer">DUENCY</a></span>
       </div>
     </div>
 
   </div>
 </footer>
 
+
 <!-- ===================== CHAT WIDGET ===================== -->
 <div class="chat-dock">
+
   <div class="chat-panel" id="chatPanel">
     <div class="chat-head">
-      <div class="chat-ava">B<span class="dot"></span></div>
+      <div class="chat-ava" aria-hidden="true">B<span class="dot"></span></div>
       <div style="flex:1;">
         <div class="name">Book N Ride Support</div>
-        <div class="status"><span class="d"></span>Online · replies in ~1 min</div>
+        <div class="status"><span class="d" aria-hidden="true"></span>Online · replies in ~1 min</div>
       </div>
-      <button class="chat-x" id="chatClose">✕</button>
+      <button class="chat-x" id="chatClose" aria-label="Close chat">✕</button>
     </div>
-    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-body" id="chatBody" aria-live="polite"></div>
     <div class="chat-chips">
       <button class="chat-chip">Get a Free Quote</button>
       <button class="chat-chip">Track My Ride</button>
       <button class="chat-chip">Talk to a Human</button>
     </div>
     <div class="chat-input-row">
-      <input type="text" id="chatInput" placeholder="Type your message...">
-      <button class="chat-send" id="chatSend">➤</button>
+      <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" aria-label="Type your message">
+      <button class="chat-send" id="chatSend" aria-label="Send message">➤</button>
     </div>
   </div>
-  <button class="chat-fab" id="chatFab"><span class="ic">💬</span><span id="chatFabLabel">Chat with us</span></button>
+
+  <button class="chat-fab" id="chatFab" aria-label="Open live chat" aria-expanded="false">
+    <span class="ic" aria-hidden="true">💬</span>
+    <span id="chatFabLabel">Chat with us</span>
+  </button>
+
 </div>
 
-<script src="assets/js/script.js"></script>
+
+<!-- ===================== SCRIPTS ===================== -->
+<!-- Shared — loaded on every page, in dependency order -->
+<script defer src="assets/js/utilities.js"></script>
+<script defer src="assets/js/navigation.js"></script>
+<script defer src="assets/js/scroll.js"></script>
+<script defer src="assets/js/chat.js"></script>
+<script defer src="assets/js/fallback.js"></script>
+
 </body>
 </html>

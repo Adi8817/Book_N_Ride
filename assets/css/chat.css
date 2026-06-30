@@ -1,0 +1,235 @@
+/* =========================================================
+   Book N Ride — chat.css
+   Chat dock, panel, messages, chips, FAB button
+   Loaded: Every page — fully self-contained
+   ========================================================= */
+
+.chat-dock {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+/* ---------- Panel ---------- */
+.chat-panel {
+  width: 360px;
+  max-width: calc(100vw - 44px);
+  background: #101013;
+  border: 1px solid rgba(245,197,66,0.25);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: chatPop 0.26s ease both;
+  display: none;
+}
+.chat-panel.open {
+  display: block;
+}
+
+/* ---------- Header ---------- */
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #1a1505, #141417);
+  border-bottom: 1px solid rgba(245,197,66,0.18);
+}
+
+.chat-ava {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #c99a3a);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: "Marcellus", serif;
+  font-size: 18px;
+}
+.chat-ava .dot {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2fd271;
+  border: 2px solid #101013;
+}
+
+.chat-head .name {
+  font-size: 14.5px;
+  font-weight: 700;
+}
+.chat-head .status {
+  font-size: 11.5px;
+  color: #5fd699;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.chat-head .status .d {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2fd271;
+  display: inline-block;
+}
+
+.chat-x {
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #c7c5bf;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-x:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* ---------- Body / Messages ---------- */
+.chat-body {
+  padding: 18px;
+  height: 280px;
+  overflow-y: auto;
+  background: var(--bg-2);
+}
+
+.msg-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+.msg-row.user  { justify-content: flex-end; }
+.msg-row.agent { justify-content: flex-start; }
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 13px;
+  border-radius: 13px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.bubble.user {
+  background: var(--gold);
+  color: var(--ink);
+  border-bottom-right-radius: 4px;
+}
+.bubble.agent {
+  background: #1f1f25;
+  color: #e9e7e1;
+  border-bottom-left-radius: 4px;
+}
+
+/* ---------- Quick-reply chips ---------- */
+.chat-chips {
+  padding: 10px 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  background: var(--bg-2);
+}
+
+.chat-chip {
+  background: rgba(245,197,66,0.1);
+  border: 1px solid rgba(245,197,66,0.32);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.chat-chip:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ---------- Input row ---------- */
+.chat-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  background: #101013;
+}
+.chat-input-row input {
+  flex: 1;
+  background: #1b1b20;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 11px 13px;
+  font-size: 13.5px;
+}
+.chat-input-row input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.chat-send {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-d));
+  color: var(--ink);
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-send:hover {
+  filter: brightness(1.08);
+}
+
+/* ---------- FAB button ---------- */
+.chat-fab {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-d));
+  color: var(--ink);
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px 14px 18px;
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(245,197,66,0.32);
+  animation: pulseRing 2.6s infinite;
+  transition: all 0.2s;
+}
+.chat-fab:hover {
+  filter: brightness(1.07);
+  transform: translateY(-2px);
+}
+.chat-fab .ic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(11,11,13,0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
