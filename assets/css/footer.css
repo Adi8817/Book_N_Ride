@@ -35,7 +35,7 @@
 .footer-brand img {
   height: 135px;
   width: auto;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   filter: drop-shadow(0 0 22px rgba(245,197,66,0.25));
 }
 .footer-brand p {
