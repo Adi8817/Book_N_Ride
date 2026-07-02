@@ -198,7 +198,7 @@
    SECTION HEADING PATTERNS
    ========================================================= */
 .section {
-  padding: 50px 5vw;
+  padding: 88px 5vw;
 }
 
 .sec-head-center {
@@ -883,6 +883,242 @@
   font-size: 12.5px;
   padding: 7px 13px;
   border-radius: 8px;
+}
+
+/* =========================================================
+   FARE TABLE  (Fare page — responsive pricing table)
+   Horizontal scroll on small screens via .fare-table-wrap.
+   All content lives in semantic HTML — no JS required.
+   ACF block: acf/fare-table
+   ========================================================= */
+.fare-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  border: 1px solid rgba(245,197,66,0.16);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+/* Subtle scroll hint on touch devices */
+.fare-table-wrap::-webkit-scrollbar       { height: 6px; }
+.fare-table-wrap::-webkit-scrollbar-track { background: #0a0a0d; }
+.fare-table-wrap::-webkit-scrollbar-thumb { background: rgba(245,197,66,0.35); border-radius: 4px; }
+
+.fare-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* ── Head ── */
+.fare-table thead tr {
+  background: linear-gradient(135deg, #1a1505, #0f0f13);
+  border-bottom: 1px solid rgba(245,197,66,0.28);
+}
+.fare-table th {
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.fare-table th:first-child {
+  min-width: 220px;
+}
+.fare-table th:not(:first-child) {
+  text-align: center;
+  min-width: 120px;
+}
+
+/* ── Body ── */
+.fare-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: #0d0d10;
+  transition: background 0.18s ease;
+}
+.fare-table tbody tr:nth-child(even) {
+  background: #0f0f13;
+}
+.fare-table tbody tr:hover {
+  background: rgba(245,197,66,0.05);
+}
+.fare-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* ── Route cell (first column) ── */
+.fare-table td {
+  padding: 16px 20px;
+  color: var(--muted-2);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.fare-table td:first-child {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14.5px;
+  white-space: normal;
+  min-width: 220px;
+}
+.fare-table td:not(:first-child) {
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #e8e6df;
+}
+
+/* ── Section divider rows ── */
+.fare-table .fare-section-row td {
+  background: rgba(245,197,66,0.06);
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-top: 1px solid rgba(245,197,66,0.16);
+  border-bottom: 1px solid rgba(245,197,66,0.1);
+}
+
+/* ── Call-to-book cell ── */
+.fare-table .fare-call {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Disclaimer block below table ── */
+.fare-disclaimer {
+  background: #0f0f12;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-top: 28px;
+}
+.fare-disclaimer h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+.fare-disclaimer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fare-disclaimer ul li {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.fare-disclaimer ul li::before {
+  content: "▸";
+  color: var(--gold);
+  font-size: 10px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   JOB CARD  (Careers page — Current Openings)
+   Extends .pillar with a department tag, location line
+   and an apply link. ACF block: acf/job-listing
+   ========================================================= */
+.job-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.28s ease;
+  height: 100%;
+}
+.job-card:hover {
+  border-color: var(--gold-line);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+.job-card-dept {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(245,197,66,0.08);
+  border: 1px solid rgba(245,197,66,0.22);
+  padding: 5px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+.job-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+  margin: 0;
+}
+.job-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+  flex: 1;
+}
+.job-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.job-card-meta span {
+  font-size: 12.5px;
+  color: var(--muted-2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.job-card-meta i {
+  color: var(--gold);
+  font-size: 12px;
+}
+.job-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  gap: 12px;
+}
+.job-card-type {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.job-apply {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--gold);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.job-card:hover .job-apply {
+  color: #fff;
 }
 
 /* =========================================================

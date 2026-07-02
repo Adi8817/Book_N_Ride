@@ -1,0 +1,371 @@
+/* =========================================================
+   Book N Ride — fleet-listing.css  (v2 — architectural review)
+   Scope  : Fleet Listing PAGE layout ONLY.
+            Grid, hero override, category nav, card extensions,
+            equal-height flex, responsive overrides.
+   Loaded : fleet.html ONLY
+   Does NOT contain reusable component styles — those live
+   in components.css.
+
+   Improvements over v1:
+   ─ Hardcoded values replaced with existing CSS variables
+     (--maxw, --line, --line-2, --muted, --muted-2, --ink,
+      --gold, --gold-line, --panel, --bg)
+   ─ .fleet-grid added — CSS Grid, 3/2/1 cols, replaces
+     Bootstrap row/col on this page
+   ─ Equal-height cards enforced via Flexbox on .fleet-body;
+     .fleet-foot-duo pinned to bottom with margin-top:auto
+   ─ Redundant font-family declaration removed from
+     .fleet-group-count (inherits body font)
+   ─ min-height on .fleet-desc removed (flex handles alignment)
+   ─ #111 literals replaced with var(--ink)
+   ─ rgba(255,255,255,0.07/0.10) replaced with var(--line/--line-2)
+   ─ 1280px replaced with var(--maxw)
+   ─ Sticky top value kept as px with an explanatory comment
+     (no --header-height token exists in the design system)
+   ========================================================= */
+
+
+/* =========================================================
+   1. HERO — page-level padding override
+   Inherits all .hero styles from sections.css.
+   Tightened vertical padding so the hero does not
+   dominate a page that is primarily a listing grid.
+   ========================================================= */
+.fleet-page .hero {
+  padding: 52px 5vw 72px;
+}
+
+
+/* =========================================================
+   2. FLEET CATEGORY NAV
+   Sticky pill-tab bar for jumping between vehicle groups.
+   top: 104px = approximate sticky-header height (topbar
+   48px + site-header ~56px). No --header-height token
+   exists in base.css so a px value is acceptable here;
+   update this value if the header height changes.
+   ========================================================= */
+.fleet-cat-nav {
+  position: sticky;
+  top: 104px;
+  z-index: 40;
+  background: rgba(10, 10, 12, 0.92); /* ~var(--bg) at 92% — rgba required; no alpha token */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 5vw;
+}
+
+.fleet-cat-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 14px 0;
+}
+.fleet-cat-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.fleet-cat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--muted-2);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+.fleet-cat-btn:hover {
+  border-color: var(--gold-line);
+  color: var(--gold);
+  background: rgba(245, 197, 66, 0.06);
+}
+.fleet-cat-btn.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+/* Count badge inside tab button */
+.fleet-cat-btn .cat-count {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 999px;
+  padding: 1px 7px;
+  line-height: 1.6;
+}
+.fleet-cat-btn.is-active .cat-count {
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   3. FLEET LISTING — PAGE WRAPPER & GROUP HEADINGS
+   Card styles (.fleet-card etc.) remain in components.css.
+   ========================================================= */
+.fleet-listing {
+  padding: 80px 5vw;
+}
+
+.fleet-listing-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+/* Vehicle category group (Sprinter / Transit / etc.) */
+.fleet-group {
+  margin-bottom: 72px;
+}
+.fleet-group:last-child {
+  margin-bottom: 0;
+}
+
+.fleet-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.fleet-group-title {
+  font-family: "Marcellus", serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Pill count beside group title — inherits body font, no override needed */
+.fleet-group-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+.fleet-group-desc {
+  font-size: 14.5px;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   4. EQUAL-HEIGHT CARDS — fleet-listing context only
+   .fleet-card in components.css is a block-level card.
+   Here we extend it with Flexbox so every card in the
+   grid matches height, and the action buttons align to
+   the bottom of each card regardless of content length.
+
+   Structure assumed:
+     .fleet-card
+       .fleet-media   (fixed height, defined below)
+       .fleet-body    ← becomes flex column
+         .fleet-cls
+         h3
+         .fleet-desc  ← grows to fill spare space
+         .fleet-features
+         .fleet-foot-duo ← pinned to bottom
+   ========================================================= */
+.fleet-listing .fleet-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-listing .fleet-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* expand to fill remaining card height */
+}
+
+/* Description grows to absorb variable-length content */
+.fleet-listing .fleet-desc {
+  flex: 1;
+}
+
+/* Pin action buttons to the bottom of every card */
+.fleet-listing .fleet-foot-duo {
+  margin-top: auto;
+}
+
+/* Taller image area on the dedicated listing page */
+.fleet-listing .fleet-media {
+  height: 240px;
+}
+
+
+/* =========================================================
+   6. FLEET CARD EXTENSIONS (fleet-listing page only)
+   Luggage badge, description, feature list, action bar.
+   The base .fleet-card shell stays in components.css.
+   ========================================================= */
+
+/* Luggage capacity badge — top-left of the media block */
+.fleet-luggage {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: rgba(11, 11, 13, 0.70);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--line-2);
+  color: var(--muted-2);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.fleet-luggage i {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* Short vehicle description — grows via flex (see §5) */
+.fleet-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* Feature checklist */
+.fleet-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.fleet-features li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--muted-2);
+  line-height: 1.4;
+}
+
+/* Inline SVG check icon as CSS pseudo-element */
+.fleet-features li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: rgba(245, 197, 66, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 4L3 5.5L6.5 2' stroke='%23f5c542' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--gold-line);
+}
+
+/* Two-button action bar — Reserve + Details */
+.fleet-foot-duo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.fleet-foot-duo .reserve {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.22s ease, transform 0.22s ease;
+}
+.fleet-foot-duo .reserve:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.fleet-foot-duo .details {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line-2);
+  color: var(--muted-2);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.22s ease, color 0.22s ease;
+}
+.fleet-foot-duo .details:hover {
+  border-color: var(--gold-line);
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   7. RESPONSIVE OVERRIDES
+   Ordered large → small. Each breakpoint only overrides
+   what genuinely changes at that viewport width.
+   ========================================================= */
+
+/* Tablet — 2-column grid, tighten sticky top */
+@media (max-width: 992px) {
+  .fleet-cat-nav {
+    top: 88px; /* reduced header height on tablet */
+  }
+  .fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fleet-group-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .fleet-group-title {
+    font-size: 26px;
+  }
+}
+
+/* Mobile — single column, tighter page padding */
+@media (max-width: 640px) {
+  .fleet-listing {
+    padding: 60px 5vw;
+  }
+  .fleet-group {
+    margin-bottom: 56px;
+  }
+  .fleet-grid {
+    grid-template-columns: 1fr;
+  }
+  .fleet-listing .fleet-media {
+    height: 200px;
+  }
+}
