@@ -1,0 +1,40 @@
+/* =========================================================
+   Book N Ride — service-area-listing.css
+   Scope : Service Area Listing page layout ONLY.
+           All reusable card, button, badge and pillar
+           styles remain in components.css.
+   Loaded: service-area.html only
+   ACF   : Supports acf/service-area-listing template
+   ========================================================= */
+
+/* =========================================================
+   1. EQUAL-HEIGHT CARDS
+   Ensures every .svc-card in this listing fills its
+   Bootstrap column and pins the action to the bottom.
+   ========================================================= */
+.area-listing-section .svc-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.area-listing-section .svc-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.area-listing-section .svc-actions {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+
+/* =========================================================
+   2. RESPONSIVE SECTION PADDING
+   ========================================================= */
+@media (max-width: 992px) {
+  .area-listing-section {
+    padding-top: 0;
+  }
+}

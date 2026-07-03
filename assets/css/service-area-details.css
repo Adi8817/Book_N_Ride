@@ -1,0 +1,80 @@
+/* =========================================================
+   Book N Ride — service-area-details.css
+   Scope : Service Area Detail page layout ONLY.
+           The two-column sticky layout, article prose,
+           feature grid and sidebar styles are shared with
+           service-detail pages via service-details.css —
+           load both on every area detail page.
+   Loaded: service-area-bedford-hills.html + all future
+           area detail pages derived from this template.
+   ACF   : Supports acf/service-area-detail template
+   ========================================================= */
+
+/* =========================================================
+   1. NEARBY DESTINATIONS GRID
+   2-column card grid inside the article.
+   ========================================================= */
+.nearby-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.nearby-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ddd9d0;
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.nearby-item:hover {
+  border-color: var(--gold-line);
+  background: rgba(245,197,66,0.04);
+  color: var(--gold);
+}
+.nearby-item .nb-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(245,197,66,0.1);
+  border: 1px solid rgba(245,197,66,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .nearby-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   2. RELATED AREAS (below two-col layout)
+   Equal-height svc-cards with pinned action.
+   ========================================================= */
+.related-areas .svc-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.related-areas .svc-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.related-areas .svc-actions {
+  margin-top: auto;
+  padding-top: 20px;
+}

@@ -1,0 +1,311 @@
+/* =========================================================
+   Book N Ride — service-details.css
+   Scope : Service Detail page layout ONLY.
+           All reusable card, button, badge, pillar and
+           portal/booking styles remain in components.css
+           and sections.css respectively.
+   Loaded: service-airport.html + all future service pages
+   ACF   : Supports acf/service-detail template
+   ========================================================= */
+
+/* =========================================================
+   1. TWO-COLUMN ARTICLE LAYOUT
+   Left  70%  — service content
+   Right 30%  — sticky booking sidebar
+   Stacks vertically on tablet/mobile (content → booking)
+   ========================================================= */
+.service-detail-wrap {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  align-items: start;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 80px 5vw;
+}
+
+
+/* =========================================================
+   2. LEFT COLUMN — article content
+   ========================================================= */
+.service-article {
+  min-width: 0; /* prevent grid blowout */
+}
+
+/* Section dividers inside the article */
+.service-article-section {
+  padding-top: 52px;
+  margin-top: 52px;
+  border-top: 1px solid var(--line);
+}
+.service-article-section:first-child {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+/* Section headings */
+.service-article-section h2 {
+  font-family: "Marcellus", serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.service-article-section h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  margin-top: 32px;
+}
+.service-article-section h3:first-child {
+  margin-top: 0;
+}
+
+/* Body copy */
+.service-article-section p {
+  font-size: 16px;
+  line-height: 1.82;
+  color: var(--muted-2);
+  margin-bottom: 16px;
+}
+.service-article-section p:last-child {
+  margin-bottom: 0;
+}
+.service-article-section strong {
+  color: #f0eee8;
+  font-weight: 700;
+}
+
+/* Bullet lists */
+.service-article-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.service-article-section ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--muted-2);
+}
+.service-article-section ul li::before {
+  content: "▸";
+  color: var(--gold);
+  font-size: 11px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* Highlighted info box */
+.service-info-box {
+  background: rgba(245,197,66,0.06);
+  border: 1px solid rgba(245,197,66,0.22);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ddd9d0;
+}
+.service-info-box strong {
+  color: var(--gold);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Feature grid — 2 columns */
+.service-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+.service-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ddd9d0;
+  transition: border-color 0.2s, background 0.2s;
+}
+.service-feature-item:hover {
+  border-color: var(--gold-line);
+  background: rgba(245,197,66,0.04);
+}
+.service-feature-item .fi-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(245,197,66,0.1);
+  border: 1px solid rgba(245,197,66,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 13px;
+}
+
+/* Area chips (service area) */
+.service-area-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* FAQ within article — reuses accordion classes */
+.service-article-section [data-accordion] {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   3. RIGHT COLUMN — sticky booking sidebar
+   ========================================================= */
+.service-booking-sidebar {
+  position: sticky;
+  top: 104px; /* header height + 20px breathing room */
+}
+
+.sidebar-booking-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)), #0d0d12;
+  border: 1px solid rgba(245,197,66,0.16);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+}
+
+.sidebar-booking-head {
+  padding: 22px 24px 18px;
+  background: linear-gradient(135deg, rgba(245,197,66,0.07), transparent);
+  border-bottom: 1px solid var(--line);
+}
+.sidebar-booking-head .hero-badge {
+  margin-bottom: 10px;
+}
+.sidebar-booking-head h3 {
+  font-family: "Marcellus", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.sidebar-booking-head p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Booking iframe inside sidebar — shorter than full-page version */
+.sidebar-booking-card .portal {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+}
+.sidebar-booking-card .portal::before {
+  display: none;
+}
+.sidebar-booking-card .booking-shell {
+  border-radius: 0;
+}
+.sidebar-booking-card iframe {
+  height: 580px;
+  border-radius: 0;
+}
+
+/* Quick contact row below sidebar iframe */
+.sidebar-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  background: rgba(0,0,0,0.18);
+}
+.sidebar-contact-row .btn {
+  width: 100%;
+  font-size: 14px;
+  padding: 12px 18px;
+  border-radius: 11px;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   4. RELATED SERVICES (below two-col layout)
+   Equal-height cards, action pinned to bottom.
+   ========================================================= */
+.related-services .svc-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.related-services .svc-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.related-services .svc-actions {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+
+/* =========================================================
+   5. RESPONSIVE
+   ========================================================= */
+@media (max-width: 1100px) {
+  .service-detail-wrap {
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Stack: content on top, booking below */
+  .service-detail-wrap {
+    grid-template-columns: 1fr;
+    padding: 60px 5vw;
+    gap: 48px;
+  }
+  .service-booking-sidebar {
+    position: static;
+  }
+  .sidebar-booking-card iframe {
+    height: 680px;
+  }
+  .service-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail-wrap {
+    padding: 48px 5vw;
+  }
+  .service-article-section {
+    padding-top: 40px;
+    margin-top: 40px;
+  }
+}
